@@ -1,0 +1,10 @@
+INDEX VERSION 1.132+D:\RMI\.metadata\.plugins\org.eclipse.jdt.core
+1242569503.index
+1755401707.index
+2101689117.index
+3688070976.index
+3425971731.index
+1865797976.index
+853331465.index
+583519824.index
+787384907.index

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config metadata-complete="false" version="2.0"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee /WEB-INF/schema/web-facesconfig_2_0.xsd">
+	<!-- This file must be present with our jar, even if it is empty. Otherwise, 
+		our Java annotations won't get scanned! -->
+	<managed-bean>
+		<managed-bean-name>insClaim</managed-bean-name>
+		<managed-bean-class>com.java.hms.Insurance_Claim</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>hmsImpl</managed-bean-name>
+		<managed-bean-class>com.java.hms.HmsDAOImpl</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>controller</managed-bean-name>
+		<managed-bean-class>com.java.hms.HmsController</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>insDetails</property-name>
+			<property-class>com.java.hms.Insurance_Details</property-class>
+			<value>#{insDetails}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>insClaim</property-name>
+			<property-class>com.java.hms.Insurance_Claim</property-class>
+			<value>#{insClaim}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>dao</property-name>
+			<property-class>com.java.hms.HmsDAOImpl</property-class>
+			<value>#{dao}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>patient</property-name>
+			<property-class>com.java.hms.Patient_Enrollment</property-class>
+			<value>#{patient}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>provider</property-name>
+			<property-class>com.java.hms.Provider_Details</property-class>
+			<value>#{provider}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>insPlan</property-name>
+			<property-class>com.java.hms.Insurance_Plans</property-class>
+			<value>#{insPlan}</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>paginationDao</managed-bean-name>
+		<managed-bean-class>com.java.hms.JsfPaginationBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+</faces-config>

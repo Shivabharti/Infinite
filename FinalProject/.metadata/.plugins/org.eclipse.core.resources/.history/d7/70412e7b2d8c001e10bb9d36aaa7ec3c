@@ -1,0 +1,278 @@
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
+ 
+<%@taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<%@taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+ 
+<f:view>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+
+        <style>
+            /* Add your CSS styles here */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                margin: 0;
+                padding: 0;
+            }
+ 
+            h2 {
+                color: #0074cc;
+            }
+ 
+            .center {
+                text-align: center;
+            }
+ 
+            .form-container {
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            }
+ 
+            .dataTable {
+                width: 100%;
+            }
+ 
+            .dataTable td, .dataTable th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+ 
+            .dataTable tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+ 
+            /* Add more styles as needed */
+        </style>
+        <script>
+            function toggleInputText() {
+               /*  alert("Hi"); */
+                var selectedValue = document.getElementById("searchForm:searchParameter").value;
+                var ProviderIDinput = document.getElementById("searchForm:ProviderIDinput");
+                var PlanIDinput = document.getElementById("searchForm:PlanIDinput");
+                var UHIDinput = document.getElementById("searchForm:UHIDinput");
+                var Diseaseinput = document.getElementById("searchForm:Diseaseinput");
+
+                  /* const provID = document.getElementById("searchForm:ProviderID");
+                alert("Form ProvId  " +provID); */
+
+                /* alert("Visibility " +provID.style.visibility);
+                alert("Disp " +provID.style.display);   */
+                // Hide all input fields
+                ProviderIDinput.style.display = "none";
+                PlanIDinput.style.display = "none";
+                UHIDinput.style.display = "none";
+                Diseaseinput.style.display = "none";
+
+             //   alert(document.getElementById("ProviderID"));
+             //   const pid = document.getElementById("ProviderID");
+          //      alert(ProviderID.style.display);
+             
+ 
+ 
+                    // Show the selected input field
+                   /*  if (selectedValue === "providerid") {
+                         alert("Hitted ProviderId");
+                      if (provID.style.display=="none") {
+							alert("Function Hitting...");
+                        	provID.style.display="block";
+                        	alert(provID.style.display);
+                        	alert("Ended");
+                        	document.getElementById("provID").submit();
+                        } 
+                        ProviderId.style.display="block";
+                        document.getElementById("ProviderID").style.display = "block";
+                        alert(ProviderID.style.display);
+                    } else if (selectedValue === "plan_id") {
+                    	Plan_ID.style.display = "block";
+                    } else if (selectedValue === "uHID") {
+                    	UHID.style.display = "block";
+                    }else if (selectedValue === "disease") {
+                    	Disease.style.display = "block";
+                    }
+                } */    // Show the selected input field
+                if (selectedValue === "providerid") {
+                	ProviderIDinput.style.display = "block";
+                } else if (selectedValue === "plan_id") {
+                	PlanIDinput.style.display = "block";
+                } else if (selectedValue === "uHID") {
+                	UHIDinput.style.display = "block";
+                } else if (selectedValue === "disease"){
+                	Diseaseinput.style.display = "block";
+                	 }
+            }
+            
+ 
+            // Initialize the input field based on the default value
+           toggleInputText();
+        </script>
+    </head>
+    <body>
+    <center>
+        <h:form id="searchForm">
+        <h2>Search Claim</h2>
+        <h:selectOneMenu id="searchParameter" onchange="toggleInputText()">
+            <f:selectItem itemValue="Select Parameter" />
+            <f:selectItem itemValue="providerid" itemLabel="Provider ID" />
+            <f:selectItem itemValue="plan_id" itemLabel="Plan ID" />
+            <f:selectItem itemValue="uHID" itemLabel="UHID" />
+            <f:selectItem itemValue="disease" itemLabel="Disease" />
+        </h:selectOneMenu>
+        
+        <h:panelGroup id="ProviderIDinput" style="display:#{not empty insurance.providerid ? 'block' : 'none'};">
+            <h:outputLabel for="providerid">Provider ID</h:outputLabel><br/>
+            <h:inputText id="providerid" value="#{insurance.providerid}" /><br/>
+            <h:messages for="providerid" style="color: red;" />
+        </h:panelGroup>
+        
+        <h:panelGroup id="PlanIDinput" style="display:#{not empty insurance.plan_id ? 'none' : 'block'};">
+            <h:outputLabel for="plan_id">Plan ID</h:outputLabel><br/>
+            <h:inputText id="plan_id" value="#{insurance.plan_id}"/>
+            <h:messages for="plan_id" style="color: red;" />
+        </h:panelGroup>
+        
+    
+        
+         
+       <%--  <h:panelGroup id="UHIDinput" style="display: none;">
+            <h:outputLabel for="uHID">UHID</h:outputLabel><br/>
+            <h:inputText id="uHID" value="#{insurance.uHID}" /><br/>
+            <h:messages for="uHID" style="color: red;" />
+        </h:panelGroup> --%>
+        
+        <h:panelGroup id="Diseaseinput" style="display: #{not empty insurance.disease ? 'block' : 'none'};">
+            <h:outputLabel for="disease">Disease</h:outputLabel><br/>
+            <h:inputText id="disease" value="#{insurance.disease}" /><br/>
+            <h:messages for="disease" style="color: red;" />
+        </h:panelGroup><br/>
+        <%-- This is JSP comment --%>
+    <%--     <h:form> --%>
+    <h:panelGroup id="UHIDinput" style="display: #{not empty insurance.uHID ? 'block' : 'none'};">
+        <h:outputLabel for="uHID">UHID</h:outputLabel><br/>
+        <h:inputText id="uHID" value="#{insurance.uHID}" /><br/>
+        <h:messages for="uHID" style="color: red;" />
+    </h:panelGroup><br/>
+
+<%-- </h:form> --%>
+        
+        
+        
+        
+        
+        
+       <h:selectOneRadio value="#{ejbImpl.matchingType}" id="matchingType">
+     <f:selectItem itemValue="startsWith" itemLabel="Starts With"/>
+     <f:selectItem itemValue="contains" itemLabel="Contains"/>
+     </h:selectOneRadio>
+
+        <h:commandButton id="searchButton" action="#{ejbImpl.searchClaimAll(insurance.providerid, insurance.plan_id, insurance.uHID, insurance.disease,ejbImpl.matchingType)}" value="Search"/>
+           <br/>  <h:commandButton  action="#{ejbImpl.clear()}"  value="Reset" />
+    </h:form>
+    
+    <h:messages id="globalMessages" globalOnly="true" style="color: red;" />
+    </center>
+   <h:form id="claimForm">
+        <div class="center">
+            <h:panelGroup rendered="#{not empty paginationDao.getInsuranceClaimList()}">
+                    <!-- Only display the table when patientList is not empty -->
+                    <h2><h:outputText value="Claim Records"/></h2>
+                </center>
+                <center>
+                <h:dataTable value="#{paginationDao.getInsuranceClaimList()}" var="i" border="3">
+                    <%-- <h:dataTable value="#{claimList}" var="i" border="3"> --%>
+                         <h:column>
+                    <f:facet name="header">
+                    	<%-- <h:outputLabel value="Claim ID" /> --%>
+                    	 <h:commandLink action="#{paginationDao.sortByClaim()}" value="Claim ID" styleClass="commandLink" />
+                    </f:facet>
+                    <h:outputText value="#{i.claim_Id}"/>
+                </h:column>
+                    <h:column>
+                     <f:facet name="header">
+                    	<h:outputLabel value="Providerid" />
+                    </f:facet>
+                    <h:outputText value="#{i.providerid}"/>
+                </h:column>
+                                    <h:column>
+                     <f:facet name="header">
+                    	<h:outputLabel value="Plan Id" />
+                    </f:facet>
+                    <h:outputText value="#{i.plan_id}"/>
+                </h:column>
+                
+                                    <h:column>
+                     <f:facet name="header">
+                    	<h:outputLabel value="UHID" />
+                    </f:facet>
+                    <h:outputText value="#{i.uHID}"/>
+                </h:column>
+                                    <h:column>
+                     <f:facet name="header">
+                    	<%-- <h:outputLabel value="Admit_date" /> --%>
+                    	<h:commandLink action="#{paginationDao.sortByDate()}" value="Admit Date" styleClass="commandLink" />
+                    </f:facet>
+                    <h:outputText value="#{i.admit_date}"/>
+                </h:column>
+                                    <h:column>
+                     <f:facet name="header">
+                    	<h:outputLabel value="disc_date" />
+                    </f:facet>
+                    <h:outputText value="#{i.disc_date}"/>
+                </h:column>
+				     <h:column>
+                     <f:facet name="header">
+                    	<%-- <h:outputLabel value="Bill_Amount" /> --%>
+                    	<h:commandLink action="#{paginationDao.sortByBill()}" value="Bill Amount" styleClass="commandLink" />
+                    </f:facet>
+                    <h:outputText value="#{i.bill_Amount}"/>
+                </h:column>
+                                    <h:column>
+                     <f:facet name="header">
+                    	<h:outputLabel value="Mis_Amount" />
+                    </f:facet>
+                    <h:outputText value="#{i.mis_Amount}"/>
+                </h:column>
+        		               <h:column>
+                     <f:facet name="header">
+                    	<%-- <h:outputLabel value="Disease" /> --%>
+                    	<h:commandLink action="#{paginationDao.sortByDisease()}" value="Disease" styleClass="commandLink" />
+                    </f:facet>
+                    <h:outputText value="#{i.disease}"/>
+                </h:column>
+                      <h:column>
+                       <f:facet name="header">
+                    	<h:outputLabel value="Comments" />
+                    </f:facet>
+                    <h:outputText value="#{i.comments}"/>
+                </h:column>
+                    </h:dataTable>
+                      <h:commandButton value="first" action="#{paginationDao.pageFirst}"
+                             disabled="#{paginationDao.firstRow == 0}" />
+            <h:commandButton value="prev" action="#{paginationDao.pagePrevious}"
+                             disabled="#{paginationDao.firstRow == 0}" />
+            <h:outputText value="&nbsp;" escape="false"/>
+            <h:commandButton value="next" action="#{paginationDao.pageNext}"
+                             disabled="#{paginationDao.firstRow + paginationDao.rowsPerPage >= paginationDao.totalRows}" />
+            <h:outputText value="&nbsp;" escape="false"/>
+            <h:commandButton value="last" action="#{paginationDao.pageLast}"
+                             disabled="#{paginationDao.firstRow + paginationDao.rowsPerPage >= paginationDao.totalRows}" />
+            <h:outputText value="&nbsp;" escape="false"/>
+            <h:outputText value="Page #{paginationDao.currentPage} / #{paginationDao.totalPages}" />
+            <br />
+            <!-- Set rows per page -->
+            <h:outputLabel for="rowsPerPage" value="Rows per page" />
+            <h:inputText id="rowsPerPage" value="#{paginationDao.rowsPerPage}" size="3" maxlength="3" />
+            <h:commandButton value="Set" action="#{paginationDao.pageFirst}" />
+            <h:message for="rowsPerPage" errorStyle="color: red;" />
+                </center>
+                </h:panelGroup>
+            
+        </h:form>
+    </body>
+</html>
+</f:view>

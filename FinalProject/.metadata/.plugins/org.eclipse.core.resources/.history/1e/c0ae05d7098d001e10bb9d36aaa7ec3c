@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 14-Nov-2023, 1:50:00 pm by Hibernate Tools 3.6.2.Final -->
+<hibernate-mapping>
+
+<class
+    name="com.java.hms.Patient_Enrollment"
+    table="PATIENT_ENROLLMENT"
+>
+
+	<id 
+        name="uHID"
+        type="int"
+        access="field"
+    >
+    
+<column name="UHID" />
+	    <generator class="assigned" />
+    </id>
+
+
+
+
+    <property
+        name="firstName"
+	    type="java.lang.String"
+    >
+<column name="FIRSTNAME" />
+  </property>
+
+    <property
+        name="lastName"
+	    type="java.lang.String"
+    >
+<column name="LASTNAME" />
+  </property>
+
+    <property
+        name="dOB"
+	    type="java.util.Date"
+        access="field"
+    >
+<column name="DOB" />
+  </property>
+
+    <property
+        name="gender"
+	    type="java.lang.String"
+    >
+<column name="GENDER" />
+  </property>
+
+    <property
+        name="userName"
+	    type="java.lang.String"
+    >
+<column name="USERNAME" />
+  </property>
+
+    <property
+        name="phone_no"
+	    type="java.lang.String"
+    >
+<column name="PHONE_NO" />
+  </property>
+
+    <property
+        name="email"
+	    type="java.lang.String"
+    >
+<column name="EMAIL" />
+  </property>
+
+    <property
+        name="status"
+	    type="java.lang.String"
+    >
+<column name="STATUS" />
+  </property>
+
+    <property
+        name="cause"
+	    type="java.lang.String"
+    >
+<column name="CAUSE" />
+  </property>
+
+    <property
+        name="address"
+	    type="java.lang.String"
+    >
+<column name="ADDRESS" />
+  </property>
+
+    <property
+        name="medHistory"
+	    type="java.lang.String"
+    >
+<column name="MEDHISTORY" />
+  </property>
+
+
+</class>
+
+</hibernate-mapping>

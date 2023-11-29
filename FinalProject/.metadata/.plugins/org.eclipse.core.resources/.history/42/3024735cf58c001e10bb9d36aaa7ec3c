@@ -1,0 +1,355 @@
+package com.java.hms;
+
+import java.util.ArrayList; 
+import java.util.List;
+import java.util.Map;
+
+import javax.faces.context.FacesContext;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
+
+public class HmsDAOImpl implements HmsDAO {
+
+	SessionFactory sf;
+	Session session;
+
+	@Override
+	public List<Insurance_Claim> showInsuranceClaim() {
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		Criteria criteria = session.createCriteria(Insurance_Claim.class);
+		List<Insurance_Claim> req = criteria.list();
+		return req;
+	}
+
+	@Override
+	public String showInsuranceRequestByClaimId(int claim_Id) {
+		System.out.println("Hello inside claim id");
+		sf = SessionHelper.getConnection();
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		session = sf.openSession();
+		Criteria criteria = session.createCriteria(Insurance_Claim.class);
+		criteria.add(Restrictions.eq("claim_Id", claim_Id));
+		Insurance_Claim req = (Insurance_Claim) criteria.uniqueResult();
+		sessionMap.put("req", req);
+		String uhid= req.getuHID();
+		Criteria cr= session.createCriteria(Patient_Enrollment.class);
+		cr.add(Restrictions.eq("uHID", uhid));
+		Patient_Enrollment patient= (Patient_Enrollment) cr.uniqueResult();
+		sessionMap.put("patient", patient);
+		return "ClaimRequest.jsp?faces-redirect=true";
+	}
+
+	public List<Insurance_Claim> getListOfInsClaim(int firstRow, int rowCount) {
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		List<Insurance_Claim> cdList = null;
+		session.beginTransaction();
+		Criteria criteria = session.createCriteria(Insurance_Claim.class);
+		if(orderById.equals("asc")) {
+			criteria.addOrder(Order.asc("insuranceId"));
+		}
+		
+		else if(orderById.equals("desc")){
+			criteria.addOrder(Order.desc("insuranceId"));
+		}
+		else if(orderByInsuranceName.equals("asc")) {
+			criteria.addOrder(Order.asc("insuranceName"));
+		}
+		else if(orderByInsuranceName.equals("desc")){
+			criteria.addOrder(Order.desc("insuranceName"));
+		}else if(orderByType.equals("asc")) {
+			criteria.addOrder(Order.asc("type"));
+		}else if(orderByType.equals("desc")){
+			criteria.addOrder(Order.desc("type"));
+		}else if(orderByPstart.equals("asc")) {
+			criteria.addOrder(Order.asc("premiumStart"));
+		}else if(orderByPstart.equals("desc")){
+			criteria.addOrder(Order.desc("premiumStart"));
+		}else if(orderByPend.equals("asc")) {
+			criteria.addOrder(Order.asc("premiumEnd"));
+		}else if(orderByPend.equals("asc")){
+			criteria.addOrder(Order.desc("premiumEnd"));
+		}else if(orderByldate.equals("asc")) {
+			criteria.addOrder(Order.asc("launchDate"));
+		}else if(orderByldate.equals("desc")){
+			criteria.addOrder(Order.desc("launchDate"));
+		}else {
+			System.out.println("done");
+		}
+		criteria.setFirstResult(firstRow);
+		criteria.setMaxResults(rowCount);
+		return criteria.list();
+	}
+	
+	static String orderByInsuranceName="test";
+	static String orderByType="test";
+	static String orderById="test";
+	static String orderByPstart= "test";
+	static String orderByPend = "test";
+	static String orderByldate = "test";
+	
+
+	public int countRows() {
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		try {
+			session.beginTransaction();
+			Criteria criteria = session.createCriteria(Insurance_Claim.class);
+			if (criteria != null) {
+				return criteria.list().size();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	public String getEmail(String uhid) {
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		Criteria cr = session.createCriteria(Patient_Enrollment.class);
+		cr.add(Restrictions.eq("uHID", uhid));
+		Patient_Enrollment pt = (Patient_Enrollment) cr.uniqueResult();
+		String email = pt.getEmail();
+		return email;
+
+	}
+
+	@Override
+	public String addClaimHistory(Insurance_Claim claim) {
+		System.out.println("Hello hii bye");
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		Criteria cr = session.createCriteria(Claim_History.class);
+		cr.add(Restrictions.eq("claim_Id", claim.getClaim_Id()));
+		System.out.println("Add claim history:" + claim.getClaim_Id());
+		Claim_History cl = new Claim_History();
+		cl = (Claim_History) cr.uniqueResult();
+		if (cl != null) {
+			sf = SessionHelper.getConnection();
+			session = sf.openSession();
+			Transaction transaction = session.beginTransaction();
+			// ClaimHistory cl = new ClaimHistory();
+			double amount;
+			amount = (claim.getBill_Amount() + claim.getMis_Amount()) * (0.8) + cl.getReimbursementAmount();
+			double amount2 = (claim.getBill_Amount() + claim.getMis_Amount()) * (0.2);
+			cl.setReimbursementAmount(amount);
+			cl.setPatientResponsibility(amount2);
+			cl.setFromDate(claim.getAdmit_date());
+			cl.setToDate(claim.getDisc_date());
+			cl.setStatus(Status.valueOf("ACCEPTED"));
+			cl.setProviderId(claim.getProviderid());
+			cl.setClaim_Id(claim.getClaim_Id());
+			cl.setSubscription_Id(claim.getSubscription_Id());
+			cl.setUhId(claim.getuHID());
+			cl.setComments(claim.getComments());
+			session.update(cl);
+			transaction.commit();
+		} else {
+			Claim_History cl1 = new Claim_History();
+			sf = SessionHelper.getConnection();
+			session = sf.openSession();
+			Transaction transaction = session.beginTransaction();
+			// ClaimHistory cl = new ClaimHistory();
+			double amount;
+			amount = claim.getBill_Amount() + claim.getMis_Amount() * 0.8;
+			double amount2 = (claim.getBill_Amount() + claim.getMis_Amount()) * (0.2);
+
+			cl1.setReimbursementAmount(amount);
+			cl1.setPatientResponsibility(amount2);
+			cl1.setFromDate(claim.getAdmit_date());
+			cl1.setToDate(claim.getDisc_date());
+			cl1.setStatus(Status.valueOf("ACCEPTED"));
+			cl1.setProviderId(claim.getProviderid());
+			cl1.setClaim_Id(claim.getClaim_Id());
+			cl1.setSubscription_Id(claim.getSubscription_Id());
+			cl1.setUhId(claim.getuHID());
+			cl1.setComments(claim.getComments());
+			session.save(cl1);
+			transaction.commit();
+		}
+		String emailId = getEmail(claim.getuHID());
+		String body = "Claim Successful"+ claim.getComments();
+		MailSend.mailOtp(emailId, "Otp Send Succesfully...", body);
+		return "ShowClaimHistory.jsp?faces-redirect=true";
+	}
+	
+	public String sendRejectMsg(Insurance_Claim claim) {
+		String emailId = getEmail(claim.getuHID());
+		String body = "your claim gets rejected beacuse "+ claim.getComments();
+		MailSend.mailOtp(emailId, "Mail sent successfully", body);
+		System.out.println("Hello");
+		return "ShowClaimHistory.jsp?faces-redirect=true";
+	}
+
+	public String getDisease(int subsId) {
+		Subscriptions subs = new Subscriptions();
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		Criteria criteria = session.createCriteria(Subscriptions.class);
+		criteria.add(Restrictions.eq("subscription_Id", subsId));
+		subs = (Subscriptions) criteria.uniqueResult();
+		int planId = subs.getPlan_id();
+		Insurance_Plans insPlan = new Insurance_Plans();
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		Criteria cr = session.createCriteria(Insurance_Plans.class);
+		cr.add(Restrictions.eq("plan_Id", planId));
+		insPlan = (Insurance_Plans) cr.uniqueResult();
+		sessionMap.put("insPlan", insPlan);
+
+		return insPlan.getCovered_Disease();
+
+	}
+
+	public Claim_History getClaimHistoryObject(int claimId) {
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		Criteria cr = session.createCriteria(Claim_History.class);
+		cr.add(Restrictions.eq("claim_Id", claimId));
+		Claim_History claim = (Claim_History) cr.uniqueResult();
+		return claim;
+	}
+
+	public double getCoverageAmount(int subsId) {
+		Subscriptions subs = new Subscriptions();
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		Criteria criteria = session.createCriteria(Subscriptions.class);
+		criteria.add(Restrictions.eq("subscription_Id", subsId));
+		subs = (Subscriptions) criteria.uniqueResult();
+		return subs.getCoverage_Amount();
+	}
+	
+	public String providerIdIsActive(String proId) {
+		Provider_Details provider = new Provider_Details();
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		Criteria criteria = session.createCriteria(Provider_Details.class);
+		criteria.add(Restrictions.eq("providerid", proId));
+		provider = (Provider_Details) criteria.uniqueResult();
+		return provider.getStatus();
+	}
+
+	public Insurance_Details getInsuranceObject(int subsId) {
+		System.out.println("Entered");
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		System.out.println("Second");
+
+		Criteria criteria = session.createCriteria(Subscriptions.class);
+		criteria.add(Restrictions.eq("subscription_Id", subsId));
+		System.out.println(subsId);
+
+		Subscriptions subs= (Subscriptions) criteria.uniqueResult();
+		System.out.println("Subs Coverage amt "+subs.getCoverage_Amount());
+		
+		int planId = subs.getPlan_id();
+		System.out.println(planId);
+
+		Insurance_Plans insPlan = new Insurance_Plans();
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		Criteria cri = session.createCriteria(Insurance_Plans.class);
+		cri.add(Restrictions.eq("plan_Id", planId));
+		System.out.println(planId+"is working");
+
+		insPlan = (Insurance_Plans) cri.uniqueResult();
+		
+		System.out.println("Ins plan"+ insPlan.getBenefits());
+		String insuranceId = insPlan.getInsurance_Id();
+		Insurance_Details ins = new Insurance_Details();
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		Criteria cr = session.createCriteria(Insurance_Details.class);
+		cr.add(Restrictions.eq("insurance_Id", insuranceId));
+		ins = (Insurance_Details) cr.uniqueResult();
+		sessionMap.put("ins", ins);
+		
+		System.out.println("Ins Details: "+ ins.getInsurance_Name());
+
+		return ins;
+	}
+
+	@Override
+	public List<Claim_History> showClaimHistory() {
+		sf = SessionHelper.getConnection();
+		session = sf.openSession();
+		Criteria criteria = session.createCriteria(Claim_History.class);
+		List<Claim_History> claimHistory = criteria.list();
+		return claimHistory;
+	}
+
+	@Override
+	public String showInsuranceRequestByProId(String proId) {
+		sf = SessionHelper.getConnection();
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		session = sf.openSession();
+		Criteria criteria = session.createCriteria(Insurance_Claim.class);
+		criteria.add(Restrictions.eq("providerid", proId));
+		List<Insurance_Claim> request = criteria.list();
+		sessionMap.put("request", request);
+		String uhid= ((Insurance_Claim) request).getuHID();
+		Criteria cr= session.createCriteria(Patient_Enrollment.class);
+		cr.add(Restrictions.eq("uHID", uhid));
+		List<Patient_Enrollment> patients= cr.list();
+		sessionMap.put("patients", patients);
+		return "ShowCReqByProId.jsp?faces-redirect=true";
+	}
+		
+	public String oneSearchButton(Insurance_Claim ins) {
+		int claimId=ins.getClaim_Id();
+		String providerId=ins.getProviderid();
+		if(ins.getType().equals("ClaimId")) {
+			System.out.println("Hello inside claim id");
+			sf = SessionHelper.getConnection();
+			Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+			session = sf.openSession();
+			Criteria criteria = session.createCriteria(Insurance_Claim.class);
+			criteria.add(Restrictions.eq("claim_Id", claimId));
+			Insurance_Claim req = (Insurance_Claim) criteria.uniqueResult();
+			sessionMap.put("req", req);
+			String uhid= req.getuHID();
+			Criteria cr= session.createCriteria(Patient_Enrollment.class);
+			cr.add(Restrictions.eq("uHID", uhid));
+			Patient_Enrollment patient= (Patient_Enrollment) cr.uniqueResult();
+			sessionMap.put("patient", patient);
+			return "ClaimRequest.jsp?faces-redirect=true";
+		}
+		else {
+			System.out.println("Hello inside it");
+			System.out.println(providerId);
+			sf = SessionHelper.getConnection();
+			Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+			session = sf.openSession();
+			Criteria criteria = session.createCriteria(Insurance_Claim.class);
+			criteria.add(Restrictions.eq("providerid", providerId));
+			List<Insurance_Claim> request =criteria.list();
+			sessionMap.put("request", request);
+			System.out.println(request);
+//			List<Patient_Enrollment> patients=new ArrayList<Patient_Enrollment>();
+//			for (Insurance_Claim insurance_Claim : request) {
+//				String uhid= insurance_Claim.getuHID();
+//				System.out.println(insurance_Claim);
+//				System.out.println(uhid);
+//				Criteria cr= session.createCriteria(Patient_Enrollment.class);
+//				cr.add(Restrictions.eq("uHID", uhid));
+//				patients= cr.list();
+//			}
+//			System.out.println(patients);
+//			sessionMap.put("patients", patients);
+			return "ShowCReqByProId.jsp?faces-redirect=true";
+		}
+	}
+	
+
+
+}

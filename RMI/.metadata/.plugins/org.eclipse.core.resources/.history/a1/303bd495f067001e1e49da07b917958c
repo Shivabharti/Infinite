@@ -1,0 +1,6 @@
+import java.rmi.server.Remote;
+
+public class Hello extends Remote {
+
+	String sayHello();
+}

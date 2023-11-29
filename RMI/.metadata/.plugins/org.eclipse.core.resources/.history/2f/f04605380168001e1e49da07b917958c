@@ -1,0 +1,10 @@
+import java.rmi.Naming;
+
+public class Server {
+
+	public static void main(String[] args) {
+		CalcImpl calc= new CalcImpl();
+		Naming.rebind("localhost", calc);
+		
+	}
+}

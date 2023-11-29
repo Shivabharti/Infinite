@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.SessionFactory"/>
+    <fullyQualifiedTypeName name="org.hibernate.Transaction"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
+    <fullyQualifiedTypeName name="org.hibernate.Session"/>
+    <fullyQualifiedTypeName name="com.java.hms.SessionHelper"/>
+    <fullyQualifiedTypeName name="org.jboss.resteasy.plugins.server.servlet.ListenerBootstrap"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="org.hibernate.criterion.Restrictions"/>
+    <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+    <fullyQualifiedTypeName name="javax.persistence.criteria.CriteriaBuilder"/>
+    <fullyQualifiedTypeName name="javax.naming.NamingException"/>
+    <fullyQualifiedTypeName name="com.java.hms.InsurancePlans"/>
+    <fullyQualifiedTypeName name="com.java.hms.Insurance_Details"/>
+    <fullyQualifiedTypeName name="javax.faces.context.FacesContext"/>
+    <fullyQualifiedTypeName name="javax.faces.application.FacesMessage"/>
+    <fullyQualifiedTypeName name="com.java.hms.HmsController"/>
+    <fullyQualifiedTypeName name="com.java.hms.HmsDAOImpl"/>
+    <fullyQualifiedTypeName name="com.java.hms.ClaimHistory"/>
+    <fullyQualifiedTypeName name="com.java.hms.HmsDAO"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.java.hms.Insurance_Claim"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="org.hibernate.Criteria"/>
+    <fullyQualifiedTypeName name="com.java.hms.Patient_Enrollment"/>
+    <fullyQualifiedTypeName name="com.java.hms.Subscriptions"/>
+    <fullyQualifiedTypeName name="com.java.hms.Insurance_Plans"/>
+    <fullyQualifiedTypeName name="org.hibernate.criterion.Projection"/>
+    <fullyQualifiedTypeName name="org.hibernate.criterion.Projections"/>
+</qualifiedTypeNameHistroy>

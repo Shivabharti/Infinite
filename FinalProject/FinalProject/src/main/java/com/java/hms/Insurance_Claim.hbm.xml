@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 14-Nov-2023, 1:38:13 pm by Hibernate Tools 3.6.2.Final -->
+<hibernate-mapping>
+
+<class
+    name="com.java.hms.Insurance_Claim"
+    table="INSURANCE_CLAIM"
+>
+
+	<id 
+        name="uHID"
+        type="java.lang.String"
+        access="field"
+    >
+    
+<column name="UHID" />
+	    <generator class="assigned" />
+    </id>
+
+
+
+
+    <property
+        name="claim_Id"
+	    type="int"
+    >
+<column name="CLAIM_ID" />
+  </property>
+
+    <property
+        name="providerid"
+	    type="java.lang.String"
+    >
+<column name="PROVIDERID" />
+  </property>
+
+    <property
+        name="subscription_Id"
+	    type="int"
+    >
+<column name="SUBSCRIPTION_ID" />
+  </property>
+
+    <property
+        name="admit_date"
+	    type="java.util.Date"
+    >
+<column name="ADMIT_DATE" />
+  </property>
+
+    <property
+        name="disc_date"
+	    type="java.util.Date"
+    >
+<column name="DISC_DATE" />
+  </property>
+
+    <property
+        name="bill_Amount"
+	    type="int"
+    >
+<column name="BILL_AMOUNT" />
+  </property>
+
+    <property
+        name="mis_Amount"
+	    type="int"
+    >
+<column name="MIS_AMOUNT" />
+  </property>
+
+    <property
+        name="disease"
+	    type="java.lang.String"
+    >
+<column name="DISEASE" />
+  </property>
+
+    <property
+        name="comments"
+	    type="java.lang.String"
+    >
+<column name="COMMENTS" />
+  </property>
+  
+
+</class>
+
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 14-Nov-2023, 12:58:34 pm by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.java.hms.InsurancePlans" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="INSURANCE_PLANS">
+        <id name="planid" type="int">
+            <column name="PLAN_ID"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="insuranceid" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="INSURANCE_ID"/>
+        </property>
+        <property generated="never" lazy="false" name="premiumamt" optimistic-lock="true" type="double" unique="false">
+            <column name="PREMIUM_AMOUNT"/>
+        </property>
+        <property generated="never" lazy="false" name="coverageamt" optimistic-lock="true" type="double" unique="false">
+            <column name="COVERAGE_AMOUNT"/>
+        </property>
+        <property generated="never" lazy="false" name="benefits" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="BENEFITS"/>
+        </property>
+        <property generated="never" lazy="false" name="covered_Disease" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="COVERED_DISEASE"/>
+        </property>
+    </class>
+</hibernate-mapping>

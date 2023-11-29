@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 14-Nov-2023, 1:36:35 pm by Hibernate Tools 3.6.2.Final -->
+<hibernate-mapping>
+
+<class
+    name="com.java.hms.Claim_History"
+    table="CLAIM_HISTORY"
+>
+
+	<id 
+        name="claimHistoryId"
+        type="int"
+    >
+    
+<column name="CLAIMHISTORYID" />
+	    <generator class="assigned" />
+    </id>
+
+
+
+
+    <property name="uhId" type="java.lang.String">
+<column name="UHID" />
+  </property>
+
+    <property
+        name="claim_Id"
+	    type="int"
+    >
+<column name="CLAIM_ID" />
+  </property>
+
+    <property
+        name="providerId"
+	    type="java.lang.String"
+    >
+<column name="PROVIDERID" />
+  </property>
+
+    <property
+        name="subscription_Id"
+	    type="int"
+    >
+<column name="SUBSCRIPTION_ID" />
+  </property>
+
+    <property
+        name="fromDate"
+	    type="java.util.Date"
+    >
+<column name="FROMDATE" />
+  </property>
+
+    <property
+        name="toDate"
+	    type="java.util.Date"
+    >
+<column name="TODATE" />
+  </property>
+
+    <property
+        name="reimbursementAmount"
+	    type="double"
+    >
+<column name="REIMBURSEMENTAMOUNT" />
+  </property>
+
+    <property
+        name="patientResponsibility"
+	    type="double"
+    >
+<column name="PATIENTRESPONSIBILITY" />
+  </property>
+
+    <property
+        name="status"
+    >
+<column name="STATUS" />
+  <type name="org.hibernate.type.EnumType">
+              		<param name="enumClass">com.java.hms.Status</param>
+              		<param name="type">12</param>
+  </type>
+  </property>
+
+    <property
+        name="comments"
+	    type="java.lang.String"
+    >
+<column name="COMMENTS" />
+  </property>
+
+
+</class>
+
+</hibernate-mapping>

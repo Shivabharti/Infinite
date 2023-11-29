@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 5 elements from project &apos;HMS&apos;&#x0D;&#x0A;- Original project: &apos;HMS&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     ClaimHistory.hbm.xml&#x0D;&#x0A;     Insurance_Claim.hbm.xml&#x0D;&#x0A;     Insurance_Details.hbm.xml&#x0D;&#x0A;     InsurancePlans.hbm.xml&#x0D;&#x0A;     Patient_Enrollment.hbm.xml" description="Delete elements" element1="src/main/java/com/java/hms/ClaimHistory.hbm.xml" element2="src/main/java/com/java/hms/Insurance_Claim.hbm.xml" element3="src/main/java/com/java/hms/InsurancePlans.hbm.xml" element4="src/main/java/com/java/hms/Patient_Enrollment.hbm.xml" element5="src/main/java/com/java/hms/Insurance_Details.hbm.xml" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="5" stamp="1699357609733" subPackages="false" version="1.0"/>
+</session>

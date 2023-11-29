@@ -1,0 +1,9 @@
+package practice;
+
+public class String {
+
+	public static void main(StringProg[] args) {
+		StringProg string= "Shivangi";
+		
+	}
+}
