@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="frmData">
+	Gender:
+	<input type="radio" name="gender" value="male"/>Male
+	<input type="radio" name="gender" value="female"/>Female
+	<br/><br/>
+	<span id="result"></span>
+	
+	
+	</form>
+</body>
+</html>

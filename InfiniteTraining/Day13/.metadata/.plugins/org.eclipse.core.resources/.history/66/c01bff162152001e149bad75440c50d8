@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="leaveForm">
+		<table border="2" align="center">
+			<tr>
+				<th colspan="2">Leave Application Form</th>
+			</tr>
+			<tr>
+				<th>Leave Id</th>
+				<td><select name="leaveId">
+				<option value="1001">1001</option>
+				<option value="1002">1002</option>
+				<option value="1003">1003</option>
+				<option value="1004">1004</option>
+				<option value="1005">1005</option>
+			</select></td>
+				</tr>
+				
+				<tr>
+				<th>Manager Name</th>
+				<td><select name="managerName">
+				<option value="Shivam">Shivam</option>
+				<option value="Abhishek">Abhishek</option>
+				<option value="Ron">Ron</option>
+				<option value="Sangeet">Sangeet</option>
+				<option value="Ankit">Ankit</option>
+			</select></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Start Date</th>
+				<td><input type="date" name="leaveEndDate"/></td>
+				</tr>
+				
+				<tr>
+				<th>Number of days</th>
+				<td><input type="date" name="noOfDays"/></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Type</th>
+				<td><Input type="leaveType" name="leaveType"/></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Status</th>
+				<td><Input type="leaveStatus" name="leaveStatus"/></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Applied On</th>
+				<td><Input type="leaveAppliedOn" name="leaveAppliedOn"/></td>
+				</tr>
+				
+				<tr>
+				<th>Manager Comments</th>
+				<td><Input type="managerComments" name="managerComments"/></td>
+				</tr>
+				
+				<tr>
+				<th colspan="2">
+					<input type="button" value="Submit" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="reset" value="Reset">
+				</th>
+				
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

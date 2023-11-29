@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+D:\InfiniteTraining\PracticeNew\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3351239624.index
+3654668226.index
+801240603.index
+3733942175.index
+2861953958.index

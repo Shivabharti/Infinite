@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form name="frmData">
+		<center>
+			Sweta
+			<input type="checkbox" name="chkStatus" onchange="show()" /><br/><br/>
+			Kajal
+			<input type="checkbox" name="chkStatus" onchange="show()" /><br/><br/>
+			<span id="result"></span>
+		</center>
+	</form>
+
+</body>
+</html>

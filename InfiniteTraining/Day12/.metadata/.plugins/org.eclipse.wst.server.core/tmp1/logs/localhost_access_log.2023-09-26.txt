@@ -1,0 +1,3 @@
+127.0.0.1 - - [26/Sep/2023:03:28:04 -0700] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [26/Sep/2023:03:28:04 -0700] "GET /EmployDashboard/WEB-INF/classes/com/java/CR/Customer.java HTTP/1.1" 404 1047
+0:0:0:0:0:0:0:1 - - [26/Sep/2023:03:28:04 -0700] "GET /favicon.ico HTTP/1.1" 404 1085

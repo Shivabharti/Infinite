@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="">
+	function show(){
+		if(frmData.firstName.value==""){
+			document.getEmelentById("err1").innerHTML="Please ENter First Name";
+			return;
+		}else{
+				document.getEmelentById("err1").innerHTML="";
+				}
+		if(frmData.lastName.value==""){
+			document.getEmelentById("err2").innerHTML="Please ENter Last Name";
+			return;
+		}else{
+				document.getEmelentById("err2").innerHTML="";
+				}			
+
+		var firstName,lastName,FullName;
+firstName=frmData.firstName.value;
+lastName=frmData.lastName.value;
+fullName= frmData.fullName.value;
+frmData.fullName.value=fullName;
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="frmData">
+	<table border="3" align="center">
+		<tr>
+			<th colspan="2">Name Form</th>
+		</tr>
+		<tr>
+			<th>First Name</th>
+			<td><input type="text" name="firstName" autofocus="autofocus"/></td>
+			<span id="err1"></span>
+		</tr>
+		<tr>
+			<th>Last Name</th>
+				<td><input type="text" name="lastName" onblur="show()" /></td>
+				<span id="err2"></span>
+				
+		</tr>
+		<tr>
+			<th>Full Name</th>
+			<td><input type="text" name="fullName" />
+			
+			</td>
+		</tr>
+	
+	</table>
+</form>
+</body>
+</html>

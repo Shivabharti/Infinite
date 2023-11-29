@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+		function show(){
+			
+			if(frmData.sweta.checked==true){
+				document.getElementById("result").innerHTML="Sweta is Present";
+			}else if(frmData.kajal.checked==true){
+				document.getElementById("result").innerHTML="Kajal is Present";
+				}else{
+					document.getElementById("result").innerHTML="Swati is present";
+				}
+		}
+
+	</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form name="frmData">
+		<center>
+			Sweta
+			<input type="checkbox" name="sweta" onchange="show()" /><br/><br/>
+			Kajal
+			<input type="checkbox" name="kajal" onchange="show()" /><br/><br/>
+			Swati
+			<input type="checkbox" name="swati" onchange="show()" /><br/><br/>
+			<span id="result"></span>
+		</center>
+	</form>
+
+</body>
+</html>

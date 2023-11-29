@@ -1,0 +1,2 @@
+no.tornado.web.processors.ContentProcessor
+no.tornado.web.processors.PageProcessor

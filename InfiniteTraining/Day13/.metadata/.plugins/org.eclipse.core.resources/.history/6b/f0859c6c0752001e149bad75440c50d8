@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	var count=0;
+	var questions=["1. c language implemented by ",
+		"2. COBOL stands for",
+		"3. What is OOPs",
+		"4. What is boxing and un-boxing",
+		"5. What is Exception handling"
+		];
+	function load(){
+		document.getElementById("question").innerHTML=questions[count];	
+	}
+	function next(){
+		count++;
+		load();
+		if(count== 5){
+			alert("No more questions");
+		}
+	}
+	function previous(){
+		count--;
+		load();
+		if(count== -1){
+			alert("Please click on next button");
+		}
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body onload="load()">
+	<form name="frmData">
+	<p id="question"></p>
+	<br/><br/>
+	<input type="button" value="Previous" onclick="previous()" /> &nbsp; &nbsp; &nbsp; &nbsp; 
+	<input type="button" value="Next" onclick="next()"/>
+		
+	</form>
+
+</body>
+</html>

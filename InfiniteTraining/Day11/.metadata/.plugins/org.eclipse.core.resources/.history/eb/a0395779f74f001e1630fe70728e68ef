@@ -1,0 +1,7 @@
+package LeaveProject;
+
+public interface LeaveDAO {
+	
+	String addLeaveDetails(LeaveAppDetails leave);
+
+}

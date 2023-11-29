@@ -1,0 +1,9 @@
+package com.java.jdbc;
+
+public class EmployInsertMain {
+
+	public static void main(String[] args) {
+		EmployDAO dao= new EmployDAOImpl();
+		
+	}
+}

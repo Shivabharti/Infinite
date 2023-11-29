@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+    <fullyQualifiedTypeName name="java.util.logging.LogManager"/>
+    <fullyQualifiedTypeName name="org.apache.log4j.LogManager"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="com.java.leave.LeaveDAO"/>
+    <fullyQualifiedTypeName name="com.java.leave.LeaveDaoImpl"/>
+    <fullyQualifiedTypeName name="com.java.leave.LeaveDetails"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+</qualifiedTypeNameHistroy>

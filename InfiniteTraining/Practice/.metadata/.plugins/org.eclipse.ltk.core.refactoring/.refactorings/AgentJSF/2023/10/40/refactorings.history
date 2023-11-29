@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.jsf.AgentJSF&apos; to &apos;com.jsf.Agent&apos;&#x0D;&#x0A;- Original project: &apos;AgentJSF&apos;&#x0D;&#x0A;- Original element: &apos;AgentJSF/src/main/java/com.jsf.AgentJSF&apos;&#x0D;&#x0A;- Renamed element: &apos;AgentJSF/src/main/java/com.jsf.Agent&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.jsf.AgentJSF&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.jsf.AgentJSF" name="com.jsf.Agent" qualified="false" references="true" stamp="1696324836069" textual="false" version="1.0"/>
+</session>

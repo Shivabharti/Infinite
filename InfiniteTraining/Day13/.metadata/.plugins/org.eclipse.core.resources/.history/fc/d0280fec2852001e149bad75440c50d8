@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+	function todayDate(){
+		var date = new Date();
+
+		var day = date.getDate();
+		var month = date.getMonth() + 1;
+		var year = date.getFullYear();
+		
+		var currentDate= year + "-"+ month + "-" + day;
+		
+		document.getElementById("result").innerHTML=currentDate;
+	}
+	
+	
+	
+	function onChange(){
+		var result= leaveForm.managerName.value;
+		var lId= leaveForm.leaveId.value;
+	}
+	
+	
+	</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="leaveForm"  onload="todayDate()">
+		<table border="2" align="center">
+			<tr>
+				<th colspan="2">Leave Application Form</th>
+			</tr>
+			<tr>
+				<th>Leave Id</th>
+				<td><select name="leaveId" onchange="leaveId()">
+				<option value="1001">1001</option>
+				<option value="1002">1002</option>
+				<option value="1003">1003</option>
+				<option value="1004">1004</option>
+				<option value="1005">1005</option>
+				<span id="result"></span>
+			</select>
+			</td>
+				</tr>
+				
+				<tr>
+				<th>Manager Name</th>
+				<td>
+				<select name="managerName">
+				<option value="Shivam">Shivam</option>
+				<option value="Abhishek">Abhishek</option>
+				<option value="Ron">Ron</option>
+				<option value="Sangeet">Sangeet</option>
+				<option value="Ankit">Ankit</option>
+			</select></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Start Date</th>
+				<td><input type="date" name="leaveEndDate"/></td>
+				</tr>
+					<tr>
+				<th>Leave End Date</th>
+				<td><input type="date" name="leaveEndDate"/></td>
+				</tr>
+				
+				<tr>
+				<th>Number of days</th>
+				<td></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Type</th>
+				<td>
+				<select name="leaveType">
+					<option value="EL">EL</option>
+					<option value="PL">PL</option>
+					<option value="ML">ML</option>
+				</select>
+			</td>
+				</tr>
+				
+				<tr>
+				<th>Leave Status</th>
+				<td><select name="leaveStatus">
+					<option value="PENDING">PENDING</option>
+					<option value="ACCEPTED">ACCEPTED</option>
+					<option value="REJECTED">REJECTED</option>
+				</select></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Applied On</th>
+				<td><span id="result"></span></td>
+				</tr>
+				
+				<tr>
+				<th>Manager Comments</th>
+				<td><Input type="managerComments" name="managerComments"/></td>
+				</tr>
+				
+				<tr>
+				<th colspan="2">
+					<input type="button" value="Submit" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="reset" value="Reset">
+				</th>
+				
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

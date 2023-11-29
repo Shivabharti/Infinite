@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+		function show(){
+			if(frmData.sweta.checked==true && frmData.kajal.checked==true && frmData.swati.checked==true){
+				document.getElementById("result").innerHTML="Sweta is Present" +"<br>"+"Kajal is present"+"<br>"+"Swati is present";
+			}else if(frmData.sweta.checked==true && frmData.kajal.checked==false && frmData.swati.checked==true){
+				document.getElementById("result").innerHTML="Sweta is Present" +"<br>"+"Kajal is Absent"+"<br>"+"Swati is present";
+			}else if(frmData.sweta.checked==false && frmData.kajal.checked==true && frmData.swati.checked==true){
+				document.getElementById("result").innerHTML="Sweta is Absent" +"<br>"+"Kajal is Present"+"<br>"+"Swati is present";
+			}else if(frmData.sweta.checked==true && frmData.kajal.checked==false && frmData.swati.checked==false){
+				document.getElementById("result").innerHTML="Sweta is Present" +"<br>"+"Kajal is Absent"+"<br>"+"Swati is Absent";
+			}
+			else if(frmData.sweta.checked==true && frmData.kajal.checked==true && frmData.swati.checked==false){
+				document.getElementById("result").innerHTML="Sweta is Present" +"<br>"+"Kajal is present"+"<br>"+"Swati is Absent";
+			}else{
+				document.getElementById("result").innerHTML="Sweta is Absent" +"<br>"+"Kajal is Absent"+"<br>"+"Swati is Absent";	
+			}
+		}
+
+	</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form name="frmData">
+		<center>
+			Sweta
+			<input type="checkbox" name="sweta" onchange="show()" /><br/><br/>
+			Kajal
+			<input type="checkbox" name="kajal" onchange="show()" /><br/><br/>
+			Swati
+			<input type="checkbox" name="swati" onchange="show()" /><br/><br/>
+			<span id="result"></span>
+		</center>
+	</form>
+
+</body>
+</html>

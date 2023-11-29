@@ -1,0 +1,104 @@
+package com.java.ims;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="insurance_Details")
+public class Insurance_Details {
+
+	@Id
+	
+	private String Insurance_id;
+	private String Insurance_Name;
+	private String Type;
+	private String PremiumStart;
+	private String PremiumEnd;
+	private String MinPeriod;
+	private String MinEnd;
+	private Date LaunchDate;
+	private String Status;
+	public String getInsurance_id() {
+		return Insurance_id;
+	}
+	public void setInsurance_id(String insurance_id) {
+		Insurance_id = insurance_id;
+	}
+	public String getInsurance_Name() {
+		return Insurance_Name;
+	}
+	public void setInsurance_Name(String insurance_Name) {
+		Insurance_Name = insurance_Name;
+	}
+	public String getType() {
+		return Type;
+	}
+	public void setType(String type) {
+		Type = type;
+	}
+	public String getPremiumStart() {
+		return PremiumStart;
+	}
+	public void setPremiumStart(String premiumStart) {
+		PremiumStart = premiumStart;
+	}
+	public String getPremiumEnd() {
+		return PremiumEnd;
+	}
+	public void setPremiumEnd(String premiumEnd) {
+		PremiumEnd = premiumEnd;
+	}
+	public String getMinPeriod() {
+		return MinPeriod;
+	}
+	public void setMinPeriod(String minPeriod) {
+		MinPeriod = minPeriod;
+	}
+	public String getMinEnd() {
+		return MinEnd;
+	}
+	public void setMinEnd(String minEnd) {
+		MinEnd = minEnd;
+	}
+	public Date getLaunchDate() {
+		return LaunchDate;
+	}
+	public void setLaunchDate(Date launchDate) {
+		LaunchDate = launchDate;
+	}
+	public String getStatus() {
+		return Status;
+	}
+	public void setStatus(String status) {
+		Status = status;
+	}
+	@Override
+	public String toString() {
+		return "Insurance_Details [Insurance_id=" + Insurance_id + ", Insurance_Name=" + Insurance_Name + ", Type="
+				+ Type + ", PremiumStart=" + PremiumStart + ", PremiumEnd=" + PremiumEnd + ", MinPeriod=" + MinPeriod
+				+ ", MinEnd=" + MinEnd + ", LaunchDate=" + LaunchDate + ", Status=" + Status + "]";
+	}
+	public Insurance_Details() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Insurance_Details(String insurance_id, String insurance_Name, String type, String premiumStart,
+			String premiumEnd, String minPeriod, String minEnd, Date launchDate, String status) {
+		super();
+		Insurance_id = insurance_id;
+		Insurance_Name = insurance_Name;
+		Type = type;
+		PremiumStart = premiumStart;
+		PremiumEnd = premiumEnd;
+		MinPeriod = minPeriod;
+		MinEnd = minEnd;
+		LaunchDate = launchDate;
+		Status = status;
+	}
+	
+	
+	
+}

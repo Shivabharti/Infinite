@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\InfiniteTraining\Day12\StateManagement\src\main\java\com\java\customer\ConnectionHelper.java"/>
+			<item value="D:\InfiniteTraining\Day12\LibraryDemo\src\main\java\com\java\library\LibraryDAOImpl.java"/>
+			<item value="D:\InfiniteTraining\Day12\JunitDemos\src\test\java\com\java\junit\VendorTest.java"/>
+			<item value="D:\InfiniteTraining\Day12\JspBeansDemo\src\main\webapp\AddEmploy.jsp"/>
+			<item value="D:\InfiniteTraining\Day12\Agent\src\main\webapp\UpdateAgent.jsp"/>
+			<item value="D:\InfiniteTraining\Day12\Agent\src\main\webapp\AddAgent.jsp"/>
+			<item value="D:\InfiniteTraining\Day12\EmployDashboard\src\main\webapp\AddEmploy.jsp"/>
+			<item value="D:\InfiniteTraining\Day12\JspDemos\src\main\webapp\EmployShow.jsp"/>
+			<item value="D:\InfiniteTraining\Day12\StateManagement\src\main\webapp\CustomerInfo.html"/>
+			<item value="D:\InfiniteTraining\Day12\DemoWeb\src\main\webapp\CreateAccount.html"/>
+			<item value="D:\InfiniteTraining\Day12\Inventory\src\main\java\com\java\inventory\SearchStockMain.java"/>
+			<item value="D:\InfiniteTraining\Day12\LMS\src\main\java\com\java\lms\LeaveDAOImpl.java"/>
+			<item value="D:\InfiniteTraining\Day12\NewFeature\src\main\java\com\java\cols\Ex1.java"/>
+			<item value="D:\java\BankProject\src\main\java\com\java\agent\AgentDeleteMain.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\CustomersOTP"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

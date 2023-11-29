@@ -1,0 +1,12 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.util.Collection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.List"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.Iterator"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.io.Closeable"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.lang.AutoCloseable"><rhs name\="java.util.Scanner"/></lhs><lhs name\="org.hibernate.cfg.Configuration"><rhs name\="org.hibernate.cfg.Configuration"/><rhs name\="org.hibernate.cfg.AnnotationConfiguration"/></lhs><lhs name\="com.java.hib.Employ"><rhs name\="com.java.hib.Employ"/></lhs><lhs name\="com.java.hibnew.EmployDAO"><rhs name\="com.java.hibnew.EmployDAOImpl"/></lhs><lhs name\="org.hibernate.criterion.Order"><rhs name\="org.hibernate.criterion.Order"/></lhs><lhs name\="com.java.agent.AgentDAO"><rhs name\="com.java.agent.AgentDAOImpl"/></lhs><lhs name\="com.java.hibnew.Login"><rhs name\="com.java.hibnew.Login"/></lhs><lhs name\="com.java.hibnew.LoginDAO"><rhs name\="com.java.hibnew.LoginDAOImpl"/></lhs><lhs name\="com.java.jsf.Employ"><rhs name\="com.java.jsf.Employ"/></lhs><lhs name\="com.java.servlets.Customer"><rhs name\="com.java.servlets.Customer"/></lhs><lhs name\="com.java.servlet.Customer"><rhs name\="com.java.servlet.Customer"/></lhs><lhs name\="javax.faces.application.FacesMessage"><rhs name\="javax.faces.application.FacesMessage"/></lhs></history>
+content_assist_number_of_computers=19
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=23
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

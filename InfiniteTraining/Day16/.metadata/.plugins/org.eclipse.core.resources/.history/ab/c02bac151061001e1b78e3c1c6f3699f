@@ -1,0 +1,24 @@
+package com.shiva.hib;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class EmDemo {
+
+	public static void main(String[] args) {
+		Configuration cfg= new Configuration();
+		cfg.configure();
+		SessionFactory factory= cfg.buildSessionFactory();
+		Student student1= new Student();
+		student1.setId(145);
+		student1.setName("Ankit Tiwari");
+		student1.setCity("Durgapur");
+		student1.setCerti(null);
+		
+		Certificate certificate= new Certificate();
+		certificate.setCourse("Android");
+		certificate.setDuration("2 months");
+		student1.setCerti(certificate);
+		factory.close();
+	}
+}

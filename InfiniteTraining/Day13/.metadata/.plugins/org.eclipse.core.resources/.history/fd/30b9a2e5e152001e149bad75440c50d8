@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+	function todayDate(){
+		var date = new Date();
+
+		var day = date.getDate();
+		var month = date.getMonth() + 1;
+		var year = date.getFullYear();
+		
+		var currentDate= year + "-"+ month + "-" + day;
+		
+		leaveForm
+	}
+function dateDiff1(){
+
+		var today=new Date();
+		var sDate =document.getElementById("sDate").value;
+			var eDate=document.getElementById("eDate").value;
+			var sDate1=new Date(sDate);
+			var eDate1=new Date(eDate);
+			var diff=eDate1.getTime()-sDate1.getTime();
+			//Number of Milliseconds
+			var days=Math.ceil(diff/(1000*60*60*24))+1;
+			document.getElementById("noOfDays").innerHTML=days;
+			if(eDate1<today || eDate1<sDate1){
+			document.getElementById("endDate").innerHTML=" Invalid ";	
+			return;
+			}
+			}
+	
+	function onChange(){
+		var result= leaveForm.managerName.value;
+		var lId= leaveForm.leaveId.value;
+		document.getElementById("result").innerHTML=result;
+		document.getElementById("result").innerHTML=lId;
+	}
+	
+	
+	</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="leaveForm"  onload="todayDate()">
+		<table border="2" align="center">
+			<tr>
+				<th colspan="2">Leave Application Form</th>
+			</tr>
+			<tr>
+				<th>Leave Id</th>
+				<td><select name="leaveId" onchange="onChange()">
+				<option value="1001">1001</option>
+				<option value="1002">1002</option>
+				<option value="1003">1003</option>
+				<option value="1004">1004</option>
+				<option value="1005">1005</option>
+				<span id="result"></span>
+			</select>
+			</td>
+				</tr>
+				
+				<tr>
+				<th>Manager Name</th>
+				<td>
+				<select name="managerName" >
+				<option value="Shivam">Shivam</option>
+				<option value="Abhishek">Abhishek</option>
+				<option value="Ron">Ron</option>
+				<option value="Sangeet">Sangeet</option>
+				<option value="Ankit">Ankit</option>
+				<span id="result"></span>
+			</select></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Start Date</th>
+				<td><input type="date" name="leaveEndDate"/></td>
+				</tr>
+					<tr>
+				<th>Leave End Date</th>
+				<td><input type="date" name="leaveEndDate"/></td>
+				</tr>
+				
+				<tr>
+				<th>Number of days</th>
+				<td></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Type</th>
+				<td>
+				<select name="leaveType">
+					<option value="EL">EL</option>
+					<option value="PL">PL</option>
+					<option value="ML">ML</option>
+				</select>
+			</td>
+				</tr>
+				
+				<tr>
+				<th>Leave Status</th>
+				<td><select name="leaveStatus">
+					<option value="PENDING">PENDING</option>
+					<option value="ACCEPTED">ACCEPTED</option>
+					<option value="REJECTED">REJECTED</option>
+				</select></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Applied On</th>
+				<td><span id="result"></span></td>
+				</tr>
+				
+				<tr>
+				<th>Manager Comments</th>
+				<td><Input type="managerComments" name="managerComments"/></td>
+				</tr>
+				
+				<tr>
+				<th colspan="2">
+					<input type="button" value="Submit" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="reset" value="Reset">
+				</th>
+				
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

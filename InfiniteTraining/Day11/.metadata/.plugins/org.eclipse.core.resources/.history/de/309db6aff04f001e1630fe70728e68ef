@@ -1,0 +1,81 @@
+package com.java.leave;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
+public class LeaveBAL {
+    static StringBuilder sb;
+    static LeaveDAO dao;
+    static {
+    	sb = new StringBuilder();
+    	dao = new LeaveDaoImpl();
+    }
+    public int calculatedays(Date startDate, Date endDate) {
+    	long diff = endDate.getTime()-startDate.getTime();
+    	int days = (int) (diff/(1000*60*60*24));
+    	return days;
+	}
+   public String addLeaveDetailsBal(LeaveDetails leave) throws LeaveException {
+	   if(validateLeave(leave)==true) {
+		   return  dao.addLeaveDetailsDao(leave);
+	   }
+	   throw new LeaveException(sb.toString());
+   }
+   
+   public List<LeaveDetails> showLeaveDetailsBal(){
+	   return dao.showLeaveDetailsDao();
+   }
+   public String updateLeaveBal(LeaveDetails leave_up) throws LeaveException {
+	   if(validateLeave(leave_up)==true) {
+		   return dao.updateleaveDao(leave_up);
+	   }
+	   throw new LeaveException(sb.toString());
+   }
+   public LeaveDetails searchLeaveBal(int empno) {
+	   return dao.searchLeaveDao(empno);
+	   
+   }
+   public static String deleteLeaveBal(int empno) {
+	   return dao.deleteLeave(empno);
+	   
+   }
+   public static String AcceptorDeny(int leaveId,String levs,String mgc) {
+	   return dao.ApproveorDeny(leaveId, levs, mgc);
+   }
+   
+
+    public boolean validateLeave(LeaveDetails leave) {
+    	boolean flag = true;
+    	Date startDate = leave.getLeaveStartDate();
+    	Date endDate = leave.getLeaveEndDate();
+    	Date currentDate = new Date();
+    	if(startDate.before(currentDate)){
+    		if(calculatedays(startDate,currentDate)>0) {
+	    		flag=false;
+	    		sb.append("Start date cannot be a before date...");
+    		}
+    	}
+    	if(endDate.before(currentDate)) {
+    		sb.append("End Date cannot be before date");
+    	}
+    	
+    	if(calculatedays(startDate,endDate)>10) {
+    		flag=false;
+    		sb.append("Leave cannot be more than 10days...");
+    	}
+    	if(calculatedays(startDate,endDate)==0) {
+    		flag=false;
+    		sb.append(" enddate and startdate cannot be equal ....");
+    	}
+    	if(startDate.before(endDate)) {
+    		sb.append("End date cannot be nbefore date of applied date...");
+    	}
+    	return flag;
+    	
+    }
+	
+   
+}

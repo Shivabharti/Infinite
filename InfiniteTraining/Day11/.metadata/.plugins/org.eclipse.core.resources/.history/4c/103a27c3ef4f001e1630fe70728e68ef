@@ -1,0 +1,133 @@
+package com.java.leave;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+public class LeaveBAL {
+
+	static StringBuilder sb;
+	 static LeaveDAO dao;
+	 
+	 
+	 static{
+		 sb= new StringBuilder();
+		 dao=new LeaveDAOImpl(); 
+	 }
+	 
+	 public LeaveDetails searchLeaveBal(int empno) {
+		 
+		 return dao.searchByLeaveID(empno);
+		 
+	 }
+	 public String readLeaveFileBal() throws FileNotFoundException, ClassNotFoundException, IOException {
+			return dao.readLeaveFileDao();
+		}
+		
+		public String writeLeaveFileBal() throws FileNotFoundException, IOException {
+			return dao.writeLeaveFileDao();
+		}
+	 
+	 public String updateLeaveDetailsBal(LeaveDetails leaveUpdated) throws LeaveException {
+			if (validationLeave(leaveUpdated)==true) {
+				return dao.UpdateLeaveDetailsDao(leaveUpdated);
+			}
+			throw new LeaveException(sb.toString());
+		}
+		
+	 public String approveupdateBal(LeaveDetails leave) throws LeaveException {
+		
+			 return dao.approvedupdate(leave);
+		
+	 }
+	 
+	 public String  deleteLeaveDetailsBal(int empno) {
+		  return dao.deleteLeaveDetailsDao(empno);
+	 }
+	
+	 public List<LeaveDetails> showLeaveDetailsBao() {
+			// TODO Auto-generated method stub
+			
+			return dao.showLeaveDetailsDao();
+		}
+	 
+	 public String addLeaveDetailsBao(LeaveDetails leave) throws LeaveException, ParseException {
+			if (validationLeave(leave)==true) {
+				return dao.addLeaveDetails(leave);
+			}
+			throw new LeaveException(sb.toString());
+		}
+	 
+		public int generateDays(LeaveDetails leave) {
+			
+			
+			Date stDate = leave.getLeaveStartDate();
+			Date eDate = leave.getLeaveEndDate();
+			
+			long diff = eDate.getTime() - stDate.getTime();
+			int days = (int) (diff/ (1000 * 60 * 60 * 24));
+			  days++;
+			  int day=(int)days;
+	  
+			return day;
+		}
+	 
+	 public boolean validationLeave(LeaveDetails leave) {
+		 
+		 SimpleDateFormat sdf= new SimpleDateFormat("dd-MM-yyyy");
+		 
+		 Date date = new Date();
+		 
+		 Calendar cal = Calendar.getInstance();
+		 
+		 cal.setTime(date);
+		cal.add(Calendar.DATE, -1);
+		
+		Date yesterdayDate=cal.getTime();
+		
+		String sDate=sdf.format(leave.getLeaveStartDate());
+		String eDate=sdf.format(leave.getLeaveEndDate());
+		
+		String yesterday=sdf.format(yesterdayDate);
+		
+		boolean flag=true;
+		
+		if (sDate.equals(yesterday) || eDate.equals(yesterday)) {
+
+	        flag = false;
+
+	        sb.append("Start Date and End Date Can not be yesterday date");
+
+	        }
+
+	        if(leave.getLeaveStartDate().before(yesterdayDate)) {
+
+	        flag = false;
+
+	        sb.append("Start Date Must be after todays date");
+
+	        }
+
+	if(generateDays(leave)>=10) {
+
+	flag=false;
+
+	sb.append("No of Days cannot be more than 10 days");
+
+	}
+
+
+	if(leave.getLeaveEndDate().before(leave.getLeaveStartDate())) {
+		flag=false;
+		sb.append("Leave End Date cannot be less than Leave Start Date");
+	}
+		
+		
+	
+	return flag;	
+	 }
+}

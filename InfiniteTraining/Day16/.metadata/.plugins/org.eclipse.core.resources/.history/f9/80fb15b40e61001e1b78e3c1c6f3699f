@@ -1,0 +1,7 @@
+package com.shiva.hib;
+
+public class Certificate {
+
+	private String course;
+	private String duration;
+}

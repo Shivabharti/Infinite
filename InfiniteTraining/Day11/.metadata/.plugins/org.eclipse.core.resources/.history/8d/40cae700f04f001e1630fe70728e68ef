@@ -1,0 +1,114 @@
+package com.java.leave;
+
+import java.io.FileInputStream;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+
+public class LeaveDAOImpl implements LeaveDAO {
+	public  class LeaveDaoImpl implements LeaveDAO {
+		static List<LeaveDetails> leaveList;
+		static {
+			leaveList = new ArrayList<LeaveDetails>();
+		}
+		
+		
+
+		
+
+		
+		public List<LeaveDetails> showLeaveDetailsDao() {
+		
+			return leaveList;
+		}
+		public int generateLeaveId() {
+			if(leaveList.size()==0) {
+				return 1;
+			}
+			return leaveList.get(leaveList.size()-1).getLeaveId()+1;
+		}
+
+		@Override
+		public String addLeaveDetailsDao(LeaveDetails leave) {
+			int leaveId=generateLeaveId();
+			leave.setLeaveId(leaveId);
+			leaveList.add(leave);
+			return "Record Inserted...";
+		}
+		
+		
+		@Override
+		 public String updateleaveDao(LeaveDetails leave_up) {
+			LeaveDetails leave_ispresent = searchLeaveDao(leave_up.getEmpno());
+			if(leave_ispresent!=null) {
+				for (LeaveDetails leave : leaveList) {
+					if(leave.getEmpno()==leave_up.getEmpno()) {
+						leave.setEmpno(leave_up.getEmpno());
+						leave.setLeaveStartDate(leave_up.getLeaveStartDate());
+						leave.setLeaveEndDate(leave_up.getLeaveEndDate());
+						leave.setLeaveStatus(leave_up.getLeaveStatus());
+						leave.setLeaveType(leave_up.getLeaveType());
+						leave.setName(leave_up.getName());
+//						leave.setManagerComments(leave_up.getManagerComments());
+					}
+				}
+				return "Leave Details updated..";
+			}
+			return "Leave record Not present";
+		}
+		@Override
+		public LeaveDetails searchLeaveDao(int empno) {
+			LeaveDetails leave_on = null;
+
+				for (LeaveDetails leave_on1 : leaveList) {
+					if(leave_on1.getEmpno()==empno) {
+						leave_on=leave_on1;
+						break;
+					}
+				}
+			  return leave_on;
+			}
+		@Override
+		public String deleteLeave(int empno) {
+			LeaveDetails leave_D = searchLeaveDao(empno);
+			if(leave_D!=null) {
+				leaveList.remove(empno);
+				System.out.println("Details Deleted...");
+			}
+			return "Leave Details Not Found";
+		}
+		@Override
+		public String ApproveorDeny(int leaveId, String levs, String mgc) {
+			
+			for (LeaveDetails leave : leaveList) {
+				if(leave.getLeaveId()==leaveId){
+					leave.setLeaveStatus(LeaveStatus.valueOf(levs));
+					leave.setManagerComments(mgc);
+					break;
+				}
+			}
+			return "Leave Status Updated";
+			
+		}
+		public LeaveDetails searchLeaveId(int leaveId) {
+			LeaveDetails leave_ok = null;
+			for (LeaveDetails leaveDetails : leaveList) {
+				if(leave_ok.getLeaveId()==leaveId) {
+					leave_ok = leaveDetails;
+					break;
+				}
+			}
+			return leave_ok;
+		}
+		
+	}

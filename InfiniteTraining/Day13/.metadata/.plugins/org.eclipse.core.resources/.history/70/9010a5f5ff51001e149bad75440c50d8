@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	function show(){
+		var result="";
+		var obj= new Date();
+		var month= obj.getMonth();
+		month+=1;
+		result += "Today's Date is "+ obj.getDate()+"<br/>";
+		result += "Month is "+ month+"<br/>";
+		result += "Year is "+obj.getFullYear()+"<br/>";
+		result += "Hours is "+ obj.getHours()+"<br/>";
+		result += "Minutes is "+obj.getMinutes()+"<br/>";
+		result += "Second is "+obj.getSeconds()+"<br/>";
+		}
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

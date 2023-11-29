@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="">
+	
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="frmData">
+	<center>
+		Name :
+		<input type=text"" name="studentName" />
+		<input type="button" value="show" />
+	</center>
+</form>
+
+</body>
+</html>

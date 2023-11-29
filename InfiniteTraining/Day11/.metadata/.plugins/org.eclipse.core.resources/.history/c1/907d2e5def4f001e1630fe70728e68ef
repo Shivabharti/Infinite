@@ -1,0 +1,18 @@
+package com.java.leave;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.List;
+
+public interface LeaveDAO {
+	List<LeaveDetails> showLeaveDetailsDao();
+	String addLeaveDetails(LeaveDetails leave) throws ParseException;
+	LeaveDetails searchByLeaveID(int leaveId);
+	String deleteLeaveDetailsDao(int empno);
+	String UpdateLeaveDetailsDao(LeaveDetails leave);
+	String writeLeaveFileDao() throws FileNotFoundException, IOException;
+	String readLeaveFileDao() throws FileNotFoundException, IOException, ClassNotFoundException;
+	String approvedupdate(LeaveDetails leave);
+	
+}

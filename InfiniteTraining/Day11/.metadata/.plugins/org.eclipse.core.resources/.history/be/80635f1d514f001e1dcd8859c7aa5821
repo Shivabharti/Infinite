@@ -1,0 +1,196 @@
+package com.java.maven;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+
+public class App {
+
+	 static SimpleDateFormat sdf;
+	 static LeaveBAL bal;
+	 static Scanner sc;
+	 
+	 static {
+		 bal = new LeaveBAL();
+		 sc= new Scanner(System.in);
+		sdf= new SimpleDateFormat("dd-MM-yyyy");
+	 }
+	
+
+  public static void main(String[] args) {
+	  
+	  
+	  int choice ;
+	  do {
+		  System.out.println("*****O P T I O N S*****");
+			System.out.println("-----------------------");
+			System.out.println("1. Add Employ");
+			System.out.println("2. Show Employ");
+			System.out.println("3. Search Employ");
+			System.out.println("4. Delete Employ");
+			System.out.println("5. Update Employ");
+			System.out.println("6. Exit");
+			System.out.println("7. Write Leave File");
+			System.out.println("8. Read Leave File");
+			System.out.println("9. show Approved/deny update");
+			System.out.println("Enter Your Choice  ");
+			choice = sc.nextInt(); 
+		  
+		  switch(choice) {
+		  case 1:
+			  try {
+				addLeaveDetailsMain();
+			} catch (LeaveException | ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			  break;
+		  case 2:
+			  showLeaveDetailsMain();
+			  
+			  break;
+			  
+		  case 3:
+			  searchLeaveMain();
+			  break;
+		
+		  case 4:
+			  deleteLeaveDetailsMain();
+			  break;
+			
+		  case 5:
+			  try {
+				updateLeaveDetailsMain();
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (LeaveException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			  break;
+		 
+		  case 7:
+			  try {
+				writeLeaveFileMain();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			  break;
+		  case 9:
+			  try {
+				appdenLeaveDetailsMain();
+			} catch (LeaveException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			  
+		  case 8:
+			  try {
+				readLeaveFileMain();
+			} catch (ClassNotFoundException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		  }  
+	  }while(choice!=6);
+	    
+  }
+ 
+  public static void deleteLeaveDetailsMain() {
+	  int empno;
+	  System.out.println("Enter Emp no");
+	  empno=sc.nextInt();
+	  System.out.println(bal.deleteLeaveDetailsBal(empno));
+  }
+  
+  public static void readLeaveFileMain() throws FileNotFoundException, ClassNotFoundException, IOException {
+		System.out.println(bal.readLeaveFileBal());
+	}
+	
+	public static void writeLeaveFileMain() throws FileNotFoundException, IOException {
+		System.out.println(bal.writeLeaveFileBal());
+	}
+  
+  	public static void searchLeaveMain() {
+  		int empno;
+  		System.out.println("Enter LeaveID no");
+  		empno=sc.nextInt();
+  		LeaveDetails leave = bal.searchLeaveBal(empno);
+  		if(leave!= null) {
+  			System.out.println(leave);
+  		}else {
+  			System.out.println("Record Not Found");
+  		}
+  		
+  	}
+  		public static void showLeaveDetailsMain() {
+  			List<LeaveDetails> detailist=  bal.showLeaveDetailsBao();
+  			for (LeaveDetails leaveDetails : detailist) {
+				System.out.println(leaveDetails);
+			}
+  		}
+  		public static void appdenLeaveDetailsMain() throws LeaveException {
+  			LeaveDetails apleave1= new LeaveDetails();
+  			 System.out.println("Enter leaveId");
+  			 apleave1.setLeaveId(sc.nextInt());
+  			 System.out.println("Enter leave status");
+  			 apleave1.setLeaveStatus(LeaveStatus.valueOf(sc.next()));
+  			 
+  			System.out.println("Enter Manager Comments");
+  	      apleave1.setManagerComments(sc.next());
+  	    System.out.println(bal.approveupdateBal(apleave1));
+  		}
+  
+	  public static void addLeaveDetailsMain() throws LeaveException, ParseException {
+		  
+		  LeaveDetails leavedetails = new LeaveDetails();
+		  
+
+		  System.out.println("Enter Employ no");
+		  leavedetails.setEmpno(sc.nextInt());
+		  System.out.println("Enter Employ Name");
+		  leavedetails.setName(sc.next());
+		  System.out.println("Enter leave Start Date in (dd-MM-yyyy)");
+		  String sDate=sc.next();
+		  Date d1=sdf.parse(sDate);
+	      leavedetails.setLeaveStartDate(d1);
+	      System.out.println("Enter leave End Date in (dd-MM-yyyy)");
+	      Date d2=sdf.parse(sDate);
+	      leavedetails.setLeaveStartDate(d2);
+	      
+	      leavedetails.setLeaveStartDate(d2);
+	      leavedetails.setLeaveEndDate(sdf.parse(sc.next()));
+	      System.out.println("Enter leave Type (PL/EL/ML)");
+	      leavedetails.setLeaveType(LeaveType.valueOf(sc.next()));
+	      System.out.println("Enter Manager Comments");
+	      leavedetails.setManagerComments(sc.next());
+	      System.out.println(bal.addLeaveDetailsBao(leavedetails));
+  }
+	  
+	  
+	  public static void updateLeaveDetailsMain() throws ParseException, LeaveException {
+		  LeaveDetails leavedetailsUpdated = new LeaveDetails();
+		  
+		  System.out.println("Enter Employ no");
+		  leavedetailsUpdated.setEmpno(sc.nextInt());
+		  System.out.println("Enter Employ Name");
+		  leavedetailsUpdated.setName(sc.next());
+		  System.out.println("Enter leave Start Date in (dd-MM-yyyy)");
+		  leavedetailsUpdated.setLeaveStartDate(sdf.parse(sc.next()));
+	      System.out.println("Enter leave End Date in (dd-MM-yyyy)"); 
+	      leavedetailsUpdated.setLeaveEndDate(sdf.parse(sc.next()));
+	      System.out.println("Enter leave Type (PL/EL/ML)");
+	      leavedetailsUpdated.setLeaveType(LeaveType.valueOf(sc.next()));
+	      System.out.println("Enter Manager Comments");
+	      leavedetailsUpdated.setManagerComments(sc.next());
+		  System.out.println(bal.updateLeaveDetailsBal(leavedetailsUpdated));
+		  
+	  }
+
+}

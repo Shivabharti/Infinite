@@ -1,0 +1,45 @@
+package com.map;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class MapDemo {
+
+	public static void main(String[] args) {
+		Configuration cfg= new Configuration();
+		cfg.configure();
+		SessionFactory factory= cfg.buildSessionFactory();
+		
+		//Creating question
+		
+		Question ques= new Question();
+		ques.setQuestionId(101);
+		ques.setQuestion("What is Java?");
+		
+		Answer ans= new Answer();
+		ans.setAnswerId(110);
+		ans.setAnswer("It is a programming Language");
+		ques.setAnswer(ans);
+		
+		Question ques1= new Question();
+		ques1.setQuestionId(102);
+		ques1.setQuestion("What is Eclipse?");
+		
+		Answer ans1= new Answer();
+		ans1.setAnswerId(120);
+		ans1.setAnswer("It is an IDE.");
+		ques1.setAnswer(ans1);
+		
+		Question ques2= new Question();
+		ques2.setQuestionId(103);
+		ques2.setQuestion("What is Programming?");
+		
+		Answer ans2= new Answer();
+		ans2.setAnswerId(110);
+		ans2.setAnswer("It is a set of code");
+		ques2.setAnswer(ans2);
+		
+		
+		factory.close();
+	}
+}

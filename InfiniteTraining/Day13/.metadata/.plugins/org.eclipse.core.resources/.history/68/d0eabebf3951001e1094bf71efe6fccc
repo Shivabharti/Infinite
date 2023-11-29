@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script >
+	function sayHello(){
+		alert("WElcome to JavaScript..");
+	}
+</script>
+<title>Insert title here</title>
+</head>
+<body onload="sayHello()">
+
+</body>
+</html>

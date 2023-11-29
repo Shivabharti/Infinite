@@ -1,0 +1,34 @@
+package LeaveProject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.java.leave.LeaveDetails;
+
+public class LeaveDAOImlp implements LeaveDAO{
+	
+	static List<LeaveDetails> leaveList;
+	static {
+		leaveList = new ArrayList<LeaveDetails>();
+	}
+	
+	
+	
+	public List<LeaveDetails> showLeaveDetailsDao() {
+		return leaveList;
+	}
+	public int generateLeaveId() {
+		if(leaveList.size()==0) {
+			return 1;
+		}
+		return leaveList.get(leaveList.size()-1).getLeaveId()+1;
+	}
+	
+	
+
+	@Override
+	public String addLeaveDetails(LeaveAppDetails leave) {
+		
+	}
+
+}

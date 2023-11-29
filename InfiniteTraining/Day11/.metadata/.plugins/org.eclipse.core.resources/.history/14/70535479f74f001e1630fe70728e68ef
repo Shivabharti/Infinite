@@ -1,0 +1,6 @@
+package LeaveProject;
+
+public enum LeaveType {
+
+	EL, PL, ML
+}

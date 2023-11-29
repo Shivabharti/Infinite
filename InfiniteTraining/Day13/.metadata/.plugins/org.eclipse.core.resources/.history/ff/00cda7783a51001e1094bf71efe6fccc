@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function shivangi(){
+		alert("Hi i am Shivangi..");
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<Input type="button" value="Shivangi" onclick="shivangi()" />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+<input type="button" value="Shirisha"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" valur="Kishu"/>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+package com.java.maven;
+
+public class LeaveException extends Exception {
+	public LeaveException(String error) {
+		super(error);
+		// TODO Auto-generated constructor stub
+	}
+
+}

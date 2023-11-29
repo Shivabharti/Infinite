@@ -1,0 +1,177 @@
+package com.java.leave;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+public class LeaveDAOImpl implements LeaveDAO {
+static List<LeaveDetails> detailist;
+	
+	static{
+		detailist= new ArrayList<LeaveDetails>();
+	}
+	
+	
+	
+	
+	
+	public int generateId() {
+		if(detailist.size()==0) {
+			return 1;
+		}else {
+			return detailist.get(detailist.size()-1).getLeaveId()+1;
+		}
+	}
+
+	@Override
+	public List<LeaveDetails> showLeaveDetailsDao() {
+		// TODO Auto-generated method stub
+		
+		return detailist;
+	}
+	
+	
+	public int generateDays(LeaveDetails leave) {
+		
+			
+		Date stDate = leave.getLeaveStartDate();
+		Date eDate = leave.getLeaveEndDate();
+		
+		long diff = eDate.getTime() - stDate.getTime();
+		int days = (int) (diff/ (1000 * 60 * 60 * 24));
+		  days++;
+		  int day=(int)days;
+  
+		return day;
+	}
+
+
+	
+	@Override
+	public String addLeaveDetails(LeaveDetails leave) throws ParseException {
+		// TODO Auto-generated method stub
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		 Calendar cal= Calendar.getInstance();
+		
+		LeaveStatus status = LeaveStatus.PENDING;
+		leave.setLeaveStatus(status);
+		int id=generateId();
+		leave.setLeaveId(id);
+		
+		detailist.add(leave);
+		
+		int count= generateDays(leave);
+		leave.setNoOfDays(count);
+		Date date=cal.getTime();
+		Date ondate=sdf.parse(sdf.format(date));
+		leave.setLeaveAppliedOn(ondate);
+		
+		return "Record Inserted";
+	}
+
+	@Override
+	public LeaveDetails searchByLeaveID(int leaveId) {
+		// TODO Auto-generated method stub
+		
+		LeaveDetails leaveFound= null;
+		
+		for (LeaveDetails leaveDetails : detailist) {
+			if(leaveDetails.getLeaveId()==leaveId) {
+				leaveFound=leaveDetails;
+				break;
+			}
+		}
+		return leaveFound;
+	}
+
+	@Override
+	public String deleteLeaveDetailsDao(int empno) {
+		// TODO Auto-generated method stub
+		LeaveDetails leaveFound=searchByLeaveID(empno);
+		
+		if(leaveFound!=null) {
+			detailist.remove(leaveFound);
+			return "Leave Record Found and Deleted ";
+		}
+		
+		return " Leave Record Not Found";
+	}
+
+	@Override
+	public String UpdateLeaveDetailsDao(LeaveDetails leaveUpdated) {
+		// TODO Auto-generated method stub
+		
+		LeaveDetails leaveFound  = searchByLeaveID(leaveUpdated.getEmpno());
+	
+		if(leaveFound != null) {
+			for (LeaveDetails leaveDetails : detailist) {
+				if(leaveDetails.getEmpno()==leaveUpdated.getEmpno()) {
+					leaveDetails.setEmpno(leaveUpdated.getEmpno());
+					leaveDetails.setName(leaveUpdated.getName());
+					leaveDetails.setLeaveStartDate(leaveUpdated.getLeaveStartDate());
+					leaveDetails.setLeaveEndDate(leaveUpdated.getLeaveEndDate());
+					leaveDetails.setLeaveAppliedOn(leaveUpdated.getLeaveAppliedOn());
+					leaveDetails.setNoOfDays(leaveUpdated.getNoOfDays());
+					leaveDetails.setLeaveType(leaveUpdated.getLeaveType());
+					leaveDetails.setLeaveStatus(leaveUpdated.getLeaveStatus());
+					leaveDetails.setManagerComments(leaveUpdated.getManagerComments());
+					
+				}
+			}
+		}
+		
+		return "Updated";
+	}
+
+	@Override
+	public String writeLeaveFileDao() throws FileNotFoundException, IOException {
+		// TODO Auto-generated method stub
+		FileOutputStream fout = 
+				new FileOutputStream("d:/files/LeaveProject.txt");
+			ObjectOutputStream objout = new ObjectOutputStream(fout);
+			objout.writeObject(detailist);
+			objout.close();
+			fout.close();
+			return " *** Data Stored in File ***";
+		
+	}
+
+	@Override
+	public String readLeaveFileDao() throws FileNotFoundException, IOException, ClassNotFoundException {
+		// TODO Auto-generated method stub
+		FileInputStream fin = new FileInputStream("d:/files/LeaveProject.txt");
+		ObjectInputStream objin = new ObjectInputStream(fin);
+		detailist = (List<LeaveDetails>)objin.readObject();
+		objin.close();
+		fin.close();
+		return "Data Retrieved From File...";
+	}
+
+	
+	@Override
+	public String approvedupdate(LeaveDetails leave) {
+		LeaveDetails leaveFound  = searchByLeaveID(leave.getLeaveId());
+		System.out.println(leaveFound);
+		if(leaveFound != null) {
+			
+			leaveFound.setLeaveId(leave.getLeaveId());
+			leaveFound.setLeaveStatus(leave.getLeaveStatus());
+			leaveFound.setManagerComments(leave.getManagerComments());
+			System.out.println(leaveFound);
+			return "Leave Status Approved...";
+	        }
+		return "Not Found";
+	
+	}
+	}
+
+

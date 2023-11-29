@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\InfiniteTraining\Practice\Insurance_Management_System_Server"/>
+			<item value="D:\InfiniteTraining\Practice\HMS1\src\main\java\com\java\HMS1\SessionHelper.java"/>
+			<item value="D:\InfiniteTraining\Practice\HibRestrictionEx\src\main\java\com\jsf\HibRestrictionEx"/>
+			<item value="D:\InfiniteTraining\Practice\LoginController"/>
+			<item value="D:\InfiniteTraining\Practice\HibRestrictionEx\pom.xml"/>
+			<item value="C:\Users\shivangib\Downloads\Customers (1)\Customers"/>
+			<item value="C:\Users\shivangib\Downloads\Day26\Day26\HibJsfEx\src\main\java\com\jsf\agent\Agent.java"/>
+			<item value="D:\InfiniteTraining\Practice\HibAgent"/>
+			<item value="D:\InfiniteTraining\Practice\HibNew\resources\hibernate.cfg.xml"/>
+			<item value="D:\InfiniteTraining\Practice\HibExample\resources\hibernate.cfg.xml"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.java.ims"/>
+		</list>
+		<list key="groupId">
+			<item value="com.java"/>
+		</list>
+		<list key="artifactId">
+			<item value="Insurance_Management_System_Client"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\shivangib\Downloads\JsfHms"/>
+			<item value="C:\Users\shivangib\Downloads\ResturantManagement1 (2)"/>
+			<item value="C:\Users\shivangib\Downloads\Day35_CMS\Day35\ResturantManagement"/>
+			<item value="C:\Users\shivangib\Downloads\OneToMany"/>
+			<item value="C:\Users\shivangib\Downloads\LoginController"/>
+			<item value="C:\Users\shivangib\Downloads\CanteenManagmentSystem"/>
+			<item value="C:\Users\shivangib\Downloads\JsfHibJsp"/>
+			<item value="C:\Users\shivangib\Downloads\day22_cms_final\day22_cms_final\HibCmsDemo"/>
+			<item value="C:\Users\shivangib\Downloads\Jsp_Jsf"/>
+			<item value="C:\Users\shivangib\Downloads\JsfDemos"/>
+			<item value="C:\Users\shivangib\Downloads\Customer_Otp"/>
+			<item value="D:\CustomersOTP"/>
+			<item value="C:\Users\shivangib\Downloads\Customers (2)\CustomerS"/>
+			<item value="C:\Users\shivangib\Downloads\Customers (1)"/>
+			<item value="D:\InfiniteTraining\Day16\ComplainProject"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

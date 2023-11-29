@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="leaveForm">
+		<table border="2" align="center">
+			<tr>
+				<th colspan="2">Leave Application Form</th>
+			</tr>
+			<tr>
+				<th>Leave Id</th>
+				<td><Input type="leaveId" name="leaveId"/></td>
+				</tr>
+				
+				<tr>
+				<th>Manager Name</th>
+				<td><Input type="managerName" name="managerName"/></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Start Date</th>
+				<td><Input type="leaveStartDate" name="leaveEndDate"/></td>
+				</tr>
+				
+				<tr>
+				<th>Number of days</th>
+				<td><Input type="noOfDays" name="noOfDays"/></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Type</th>
+				<td><Input type="leaveType" name="leaveType"/></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Status</th>
+				<td><Input type="leaveStatus" name="leaveStatus"/></td>
+				</tr>
+				
+				<tr>
+				<th>Leave Applied On</th>
+				<td><Input type="leaveAppliedOn" name="leaveAppliedOn"/></td>
+				</tr>
+				
+				<tr>
+				<th>Manager Comments</th>
+				<td><Input type="managerComments" name="managerComments"/></td>
+				</tr>
+		</table>
+	</form>
+</body>
+</html>
