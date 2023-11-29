@@ -1,0 +1,27 @@
+INDEX VERSION 1.132
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\289247527.index
+\HmsJsfClient\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1171072720.index
+\JsfDemos\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1301864445.index
+\JsfEjbEmploy\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2291759443.index
+\EjbCmpEntityClient\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\265138716.index
+\JsfEjbAgent\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1309580731.index
+\InsuranceSystem\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\583451969.index
+\EjbStateFullClient\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\673642475.index
+\IMS_Client\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\131415073.index
+\JsfEjbAgent1\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3655663516.index
+\JsfHms\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3081338553.index
+\EjbEntityClient\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\70506272.index
+\EjbEmplClient\src\main\java
+D:\EJB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2482100731.index
+\JsfEjbAgent\src\main\java

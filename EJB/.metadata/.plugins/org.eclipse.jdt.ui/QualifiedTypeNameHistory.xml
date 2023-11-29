@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.java.ejb.EmployEjbBean"/>
+    <fullyQualifiedTypeName name="com.java.ejb.EmployEjbBeanRemote"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="com.java.ejb.DoctorDAOImpl"/>
+    <fullyQualifiedTypeName name="com.java.ejb.Doctor_Master"/>
+    <fullyQualifiedTypeName name="javax.annotation.Generated"/>
+    <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+    <fullyQualifiedTypeName name="javax.persistence.Query"/>
+    <fullyQualifiedTypeName name="com.java.ejb.EmployBeanRemote"/>
+    <fullyQualifiedTypeName name="com.java.ims.RemoteHelper"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.hibernate.Criteria"/>
+    <fullyQualifiedTypeName name="javax.transaction.Transaction"/>
+    <fullyQualifiedTypeName name="com.java.ims.GenerarteOtp"/>
+    <fullyQualifiedTypeName name="org.hibernate.criterion.Restrictions"/>
+    <fullyQualifiedTypeName name="com.java.ims.SessionHelper"/>
+    <fullyQualifiedTypeName name="org.hibernate.Transaction"/>
+    <fullyQualifiedTypeName name="com.java.ims.MailSend"/>
+    <fullyQualifiedTypeName name="com.java.ims.Insurance_Details"/>
+    <fullyQualifiedTypeName name="com.java.ims.Customer_Details"/>
+    <fullyQualifiedTypeName name="com.java.ims.Customer_Authorization"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="javax.faces.context.FacesContext"/>
+    <fullyQualifiedTypeName name="com.java.ims.CustomerPolicy"/>
+    <fullyQualifiedTypeName name="com.java.ejb.PatientReportDAO"/>
+    <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
+    <fullyQualifiedTypeName name="com.java.ejb.HmsEjbImpl"/>
+    <fullyQualifiedTypeName name="com.java.ejb.Patient_Report"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="com.java.ejb.StateFullClient"/>
+    <fullyQualifiedTypeName name="javax.ejb.Remote"/>
+    <fullyQualifiedTypeName name="com.java.ejb.RemoteHelper"/>
+    <fullyQualifiedTypeName name="java.util.Hashtable"/>
+    <fullyQualifiedTypeName name="javax.ejb.Stateful"/>
+    <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="com.java.ims.EncryptPassword"/>
+</qualifiedTypeNameHistroy>

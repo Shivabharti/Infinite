@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;CalculationBeanRemote.java&apos; to &apos;EjbCalculation1/ejbModule/com.java.ejb&apos;&#x0D;&#x0A;- Original project: &apos;EjbCalculationClient&apos;&#x0D;&#x0A;- Destination element: &apos;EjbCalculation1/ejbModule/com.java.ejb&apos;&#x0D;&#x0A;- Original element: &apos;com.java.Ejb.CalculationBeanRemote.java&apos;" description="Copy compilation unit" destination="=EjbCalculation1/ejbModule&lt;com.java.ejb" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.java.Ejb{CalculationBeanRemote.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1697177940315" units="1" version="1.0"/>
+</session>

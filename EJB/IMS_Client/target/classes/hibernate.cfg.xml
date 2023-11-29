@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localHost:3306/infinite_august23</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <mapping resource="com/java/ims/Insurance_Details.hbm.xml"/>
+        <mapping resource="com/java/ims/Customer_Details.hbm.xml"/>
+        <mapping resource="com/java/ims/Customer_Authorization.hbm.xml"/>
+        <mapping resource="com/java/ims/CustomerPolicy.hbm.xml"/> 
+        <mapping resource="com/java/ims/Ins_Plans.hbm.xml"/> 
+        
+    </session-factory>
+</hibernate-configuration>
