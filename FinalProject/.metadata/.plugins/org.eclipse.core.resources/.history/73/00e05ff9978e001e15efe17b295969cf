@@ -1,0 +1,21 @@
+package com.java.hib;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// Assuming you have a Provider instance, replace this with your actual data
+		Provider provider = new Provider();
+		provider.setEmail("ganeshmirda5@gmail.com");
+		provider.setFirstName("John");
+		provider.setLastName("Doe");
+		provider.setLicenseNumber("123456");
+		provider.setQualification("Medical Doctor");
+		provider.setComments("Your application is incomplete.");
+
+		// Create an instance of the RejMail class
+		RejMail rejMail = new RejMail();
+
+		// Call the sendEmail method with the Provider instance
+		rejMail.sendEmail(provider);
+	}
+}

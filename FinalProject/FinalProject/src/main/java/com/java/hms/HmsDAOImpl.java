@@ -247,18 +247,18 @@ public class HmsDAOImpl implements HmsDAO {
 
 		System.out.println("Ins plan" + insPlan.getBenefits());
 		String insuranceId = insPlan.getInsurance_Id();
-		Insurance_Details ins = new Insurance_Details();
+		Insurance_Details inss = new Insurance_Details();
 		sf = SessionHelper.getConnection();
 		session = sf.openSession();
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		Criteria cr = session.createCriteria(Insurance_Details.class);
 		cr.add(Restrictions.eq("insurance_Id", insuranceId));
-		ins = (Insurance_Details) cr.uniqueResult();
-		sessionMap.put("ins", ins);
+		inss = (Insurance_Details) cr.uniqueResult();
+		sessionMap.put("inss", inss);
 
-		System.out.println("Ins Details: " + ins.getInsurance_Name());
+		System.out.println("Ins Details: " + inss.getInsurance_Name());
 
-		return ins;
+		return inss;
 	}
 
 	@Override
@@ -329,6 +329,13 @@ public class HmsDAOImpl implements HmsDAO {
 			sessionMap.put("requestlist", requestlist);
 			return "ShowCReqByProId.jsp?faces-redirect=true";
 		}
+	}
+	
+	
+	public String showDetails(Insurance_Claim ins) {
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("ins", ins);
+		return"showAllDetails.jsp?faces-redirect=true";
 	}
 
 }

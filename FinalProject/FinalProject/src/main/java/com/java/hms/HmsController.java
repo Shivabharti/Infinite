@@ -109,6 +109,17 @@ public class HmsController {
 		}
 		return "";
 	}
+	public String addClaimHistoryControl() throws NamingException {
+		System.out.println("Hacker");
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		Insurance_Claim claim = (Insurance_Claim) sessionMap.get("ins");
+		if (addValidation(claim) == true) {
+			HmsDAOImpl daoNew = new HmsDAOImpl();
+
+			return daoNew.addClaimHistory(claim);
+		}
+		return "";
+	}
 
 	public boolean addValidation(Insurance_Claim insClaim) {
 		FacesContext context = FacesContext.getCurrentInstance();

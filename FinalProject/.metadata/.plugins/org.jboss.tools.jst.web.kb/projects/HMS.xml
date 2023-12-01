@@ -204,66 +204,21 @@
   <path value="C:/Users/shivangib/.m2/repository/org/wildfly/security/wildfly-elytron-auth-server-sasl/1.19.0.Final/wildfly-elytron-auth-server-sasl-1.19.0.Final.jar"/>
   <path value="C:/Users/shivangib/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar">
    <libraries>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/c-1_0-rt.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/c-1_0.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/c.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fmt-1_0-rt.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fmt-1_0.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fmt.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fn.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/permittedtaglibs.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/scriptfree.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/sql-1_0-rt.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/sql-1_0.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/sql.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/x-1_0-rt.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/x-1_0.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jstl-1.2.jar/meta-inf/x.tld" project="FinalProject"/>
-    </library>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="tld"/>
    </libraries>
   </path>
   <path value="C:/Users/shivangib/wildfly-9.0.2.Final/modules/system/layers/base/javax/transaction/api/main/jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
@@ -309,50 +264,17 @@
   <path value="C:/Users/shivangib/wildfly-9.0.2.Final/modules/system/layers/base/org/picketbox/main/picketbox-infinispan-4.9.2.Final.jar"/>
   <path value="C:/Users/shivangib/.m2/repository/com/sun/faces/jsf-impl/2.2.14/jsf-impl-2.2.14.jar">
    <libraries>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jsf-impl-2.2.14.jar/meta-inf/html_basic.tld" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jsf-impl-2.2.14.jar/meta-inf/jsf_core.tld" project="FinalProject"/>
-    </library>
-    <library class="facelet">
-     <id class="model-object"
-      path="FileSystems/lib-jsf-impl-2.2.14.jar/meta-inf/mojarra_ext.taglib.xml" project="FinalProject"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-jsf-impl-2.2.14.jar/meta-inf/mojarra_ext.tld" project="FinalProject"/>
-    </library>
-    <library class="facelet">
-     <id class="model-object"
-      path="FileSystems/lib-jsf-impl-2.2.14.jar/com/sun/faces/metadata/taglib/composite.taglib.xml" project="FinalProject"/>
-    </library>
-    <library class="facelet">
-     <id class="model-object"
-      path="FileSystems/lib-jsf-impl-2.2.14.jar/com/sun/faces/metadata/taglib/facelets_jsf_core.taglib.xml" project="FinalProject"/>
-    </library>
-    <library class="facelet">
-     <id class="model-object"
-      path="FileSystems/lib-jsf-impl-2.2.14.jar/com/sun/faces/metadata/taglib/html_basic.taglib.xml" project="FinalProject"/>
-    </library>
-    <library class="facelet">
-     <id class="model-object"
-      path="FileSystems/lib-jsf-impl-2.2.14.jar/com/sun/faces/metadata/taglib/jstl-core.taglib.xml" project="FinalProject"/>
-    </library>
-    <library class="facelet">
-     <id class="model-object"
-      path="FileSystems/lib-jsf-impl-2.2.14.jar/com/sun/faces/metadata/taglib/jstl-fn.taglib.xml" project="FinalProject"/>
-    </library>
-    <library class="facelet">
-     <id class="model-object"
-      path="FileSystems/lib-jsf-impl-2.2.14.jar/com/sun/faces/metadata/taglib/mojarra_ext.taglib.xml" project="FinalProject"/>
-    </library>
-    <library class="facelet">
-     <id class="model-object"
-      path="FileSystems/lib-jsf-impl-2.2.14.jar/com/sun/faces/metadata/taglib/ui.taglib.xml" project="FinalProject"/>
-    </library>
+    <library class="tld"/>
+    <library class="tld"/>
+    <library class="facelet"/>
+    <library class="tld"/>
+    <library class="facelet"/>
+    <library class="facelet"/>
+    <library class="facelet"/>
+    <library class="facelet"/>
+    <library class="facelet"/>
+    <library class="facelet"/>
+    <library class="facelet"/>
    </libraries>
   </path>
   <path value="C:/Users/shivangib/.m2/repository/org/wildfly/wildfly-http-client/wildfly-http-client-common/1.1.11.Final/wildfly-http-client-common-1.1.11.Final.jar"/>

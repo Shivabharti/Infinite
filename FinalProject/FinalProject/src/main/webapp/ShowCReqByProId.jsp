@@ -94,7 +94,7 @@
 				<f:facet name="header">
 					<h:outputLabel value="Validate" />
 				</f:facet>
-				<h:commandButton action="ClaimReqByProId.jsp"
+				<h:commandButton action="#{hmsImpl.showDetails(e) }"
 					value="Validate" />
 			</h:column>
 

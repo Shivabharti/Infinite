@@ -31,4 +31,5 @@
     <fullyQualifiedTypeName name="com.java.hms.Insurance_Plans"/>
     <fullyQualifiedTypeName name="org.hibernate.criterion.Projection"/>
     <fullyQualifiedTypeName name="org.hibernate.criterion.Projections"/>
+    <fullyQualifiedTypeName name="com.java.hms.Provider_Details"/>
 </qualifiedTypeNameHistroy>
